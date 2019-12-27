@@ -1,4 +1,4 @@
-- name: Create volum 
+- name: Create volume 
   file:
     path: "{{item}}"
     state: directory
@@ -16,10 +16,3 @@
 - name: run docker-compose
   docker_compose:
     project_src: /data/
-  register: output
-
-
-
-
-
-
