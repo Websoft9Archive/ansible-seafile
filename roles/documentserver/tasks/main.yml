@@ -1,0 +1,15 @@
+---
+- name: pull onlyoffice/documentserver image
+  docker_image:
+    name: onlyoffice/documentserver
+
+- name: Run onlyoffice/documentserver
+  docker_container:
+    name: documentserver
+    image: onlyoffice/documentserver
+    restart_policy: always
+    ports: 
+      - "8080:80"
+    volumes: 
+      - /app/onlyoffice/DocumentServer/logs:/var/log/onlyoffice
+      - /app/onlyoffice/DocumentServer/data:/var/www/onlyoffice/Data
