@@ -9,7 +9,7 @@
     image: onlyoffice/documentserver
     restart_policy: always
     ports: 
-      - "80:80"
+      - "9002:80"
     volumes: 
       - /app/onlyoffice/DocumentServer/logs:/var/log/onlyoffice
       - /app/onlyoffice/DocumentServer/data:/var/www/onlyoffice/Data
