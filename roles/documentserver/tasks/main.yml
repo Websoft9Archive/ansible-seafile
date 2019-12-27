@@ -9,7 +9,29 @@
     image: onlyoffice/documentserver
     restart_policy: always
     ports: 
-      - "8080:80"
+      - "80:80"
     volumes: 
       - /app/onlyoffice/DocumentServer/logs:/var/log/onlyoffice
       - /app/onlyoffice/DocumentServer/data:/var/www/onlyoffice/Data
+      - /app/onlyoffice/DocumentServer/lib:/var/lib/onlyoffice 
+      - /app/onlyoffice/DocumentServer/db:/var/lib/postgresql
+
+- name: Create certs directory
+  file:
+    path: /app/onlyoffice/DocumentServer/data/certs
+    state: directory
+
+- name: Copy certificate to certs directory
+  copy:
+    src: {{item}}
+    dest: /app/onlyoffice/DocumentServer/data/certs
+  with_items:
+    - onlyoffice.crt
+    - onlyoffice.csr
+    - onlyoffice.key
+    - dhparam.pem
+
+- name: change permission of onlyoffice.key
+  file:
+    path: /app/onlyoffice/DocumentServer/data/certs/onlyoffice.key
+    mode: 0400
