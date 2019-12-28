@@ -19,11 +19,18 @@ c8d87bd732d7        mariadb:10.1                   "docker-entrypoint.s…"   5 
 
 ### Seafile
 
+Seafile 主目录：*/data/seafile/seafile*  
+Seafile 日志目录：*/data/seafile/logs*  
+Seafile 自上传证书目录：*/data/seafile/logs*  
+
+Seafile 主目录下包括：conf,seafile-data等重要目录
+
 ### MySQL
 
-PostgreSQL 数据持久存储：*/data/mysql*
+MySQL 数据持久存储：*/data/mysql*
 
 ### OnlyOffice Document Server
+
 
 ### Docker
 
