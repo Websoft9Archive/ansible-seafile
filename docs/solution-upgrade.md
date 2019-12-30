@@ -26,14 +26,11 @@ yum update -y
 
 ## Seafile Upgrade
 
-Upgrading Seafile involves rerunning the install playbook. Download a newer release from https://github.com/ansible/awx/releases and re-populate the inventory file with your customized variables.
+Just one command for Seafile upgrading
 
-For convenience, you can create a file called vars.yml:
+```
+sudo cd /data && docker-compose up -d
+```
 
-admin_password: 'adminpass'
-pg_password: 'pgpass'
-rabbitmq_password: 'rabbitpass'
-secret_key: 'mysupersecret'
-And pass it to the installer:
-
-$ ansible-playbook -i inventory install.yml -e @vars.yml
+More details please refer to official docs [Seafile upgrade
+](https://download.seafile.com/published/seafile-manual/deploy/deploy_with_docker.md)

@@ -2,53 +2,55 @@
 
 The Seafile deployment package contains a sequence software (referred to as "components") required for Seafile to run. The important information such as the component name, installation directory path, configuration file path, port, version, etc. are listed below.
 
+The deployment solution is based Docker, run the command`docker ps` to list all Containers running: 
+
+```bash
+CCONTAINER ID        IMAGE                          COMMAND                  CREATED             STATUS              PORTS                                         NAMES
+cb57bbd9f1ef        onlyoffice/documentserver      "/bin/sh -c /app/ds/…"   2 hours ago         Up 2 hours          0.0.0.0:9002->80/tcp, 0.0.0.0:9003->443/tcp   documentserver
+3878b29258e2        seafileltd/seafile-mc:latest   "/sbin/my_init -- /s…"   5 hours ago         Up About an hour    0.0.0.0:80->80/tcp                            seafile
+4974ad7c20e8        memcached:1.5.6                "memcached -m 256"       5 hours ago         Up 2 hours          11211/tcp                                     seafile-memcached
+c8d87bd732d7        mariadb:10.1                   "docker-entrypoint.s…"   5 hours ago         Up 2 hours          3306/tcp                                      seafile-mysql
+
+```
+
+
 ## Path
+
+The following mainly lists the parameters related to Docker: 
+
+### Docker Compose
+
+This environment uses Docker Compose as a container orchestration (scheduling) tool for managing multiple container configurations, launches, and service connections.
+
+Docker Compose configuration file:  */data/docker-compose.yml*  
+Docker Compose command directory: */usr/local/bin/docker-compose*  
 
 ### Seafile
 
-Seafile installation directory: */opt/awx*  
-Seafile configuration file: */etc/awx/settings.py*  
-Ansible Python packages: */opt/awx/embedded/lib/python2.7/site-packages*
+Seafile install directory: */data/seafile*  
+Seafile logs directory: */data/seafile/logs*  
+Seafile ssl files directory: */data/seafile/ssl*  
 
-```python
-# The important items in the configuration file
-TATIC_ROOT = '/opt/awx/static'
-PROJECTS_ROOT = '/var/lib/awx/projects'
-JOBOUTPUT_ROOT = '/var/lib/awx/job_status'
-```
+Seafile installation directory includes: conf,seafile-data and other important folder
 
-### Nginx
+### MySQL
 
-Nginx vhost configuration file: */etc/nginx/conf.d/default.conf*  
-Nginx main configuration file: */etc/nginx/nginx.conf*  
-Nginx logs file: */var/log/nginx/*  
-Nginx & uWSGI configuration file: */etc/nginx/uwsgi_params*  
+MySQL data storage: */data/mysql*
 
-### uWSGI
+### OnlyOffice Document Server
 
-uWSGI installation directory: */opt/awx/bin/uwsgi*  
+OnlyOffice Document Server certs storage: */data/certs/onlyoffice_DocumentServer*  
+OnlyOffice Document Server logs storage: */data/logs/onlyoffice_DocumentServer*  
+OnlyOffice Document Server data storage: */data/wwwroot/onlyoffice_DocumentServer/data*  
+OnlyOffice Document Server lib storage: */data/wwwroot/onlyoffice_DocumentServer/lib*  
+OnlyOffice Document Server database storage: *data/onlyoffice_DocumentServer_postgresql*  
 
-### Python
+### Docker
 
-Python installation directory: */usr/lib/python2.7* and */usr/lib/python*  
-Python VM directory: */usr/bin/python2.7*  and */usr/bin/python*  
-
-### Ansible
-
-Ansible installation directory: */opt/awx/embedded/lib/python2.7/site-packages/ansible-2.7.4.dist-info*
-
-### RabbitMQ
-
-RabbitMQ installation & configuration directory: */usr/lib/rabbitmq*  
-RabbitMQ logs file: */var/log/rabbitmq*
-
-### PostgreSQL
-
-PostgreSQL installation directory: */usr/pgsql-v*  # v是版本号  
-PostgreSQL data file: */data/pgsql/base*  
-PostgreSQL configuration file: */data/pgsql/postgresql.conf*    
-PostgreSQL logs file: */data/pgsql/pg_log*  
-PostgreSQL Web Management URL: *http://Internet IP:9090*, get credential from [Username and Password](/stack-accounts.md)
+Docker root directory: */var/lib/docker*  
+Docker image directory: */var/lib/docker/image*   
+Docker storage: */var/lib/docker/volumes*  
+Docker daemon.json: It is not created by default, please go to the * /etc/docker* to create it yourself as needed
 
 ## Ports
 
@@ -59,22 +61,26 @@ These Ports is need when use Seafile, refer to [Safe Group Setting on Cloud Cons
 | PostgreSQL | 5432 | Remote connect PostgreSQL | Optional |
 | HTTP | 80 | HTTP requests for Seafile | Required |
 | HTTPS | 443 | HTTPS requests Seafile | Optional |
-| phpPgAdmin on Docker | 9090 | Web managment GUI for PostgreSQL | Optional |
+| HTTP | 9002 | HTTP requests OnlyOffice Document Server | Optional |
+| HTTPS | 9003 | HTTPS requests OnlyOffice Document Server | Optional |
 
 ## Version
 
 You can see the version from product page of Marketplace. However, after being deployed to your server, the components will be automatically updated, resulting in a certain change in the version number. Therefore, the exact version number should be viewed by running the command on the server:
 
 ```shell
+# Linux Version
+lsb_release -a
+
 # Python Version
 python --version
 
-# Nginx version:
-nginx -v
+# Docker Version
+docker -v
 
-# PostgreSQL version:
-psql --version
+# Docker image lists(includes version)
+sudo docker images
 
-# Dokcer:
-docker --version
+# Docker Compose Version
+docker-compose --version
 ```

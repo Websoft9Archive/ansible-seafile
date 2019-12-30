@@ -17,11 +17,18 @@ c8d87bd732d7        mariadb:10.1                   "docker-entrypoint.s…"   5 
 
 下面主要列出Docker有关的参数：
 
+### Docker Compose
+
+本环境使用 Docker Compose 作为容器编排（调度）工具，用于管理多个容器配置、启动和服务连接。
+
+Docker Compose 配置文件 */data/docker-compose.yml*  
+Docker Compose 命令位置：*/usr/local/bin/docker-compose*  
+
 ### Seafile
 
 Seafile 主目录：*/data/seafile/seafile*  
 Seafile 日志目录：*/data/seafile/logs*  
-Seafile 自上传证书目录：*/data/seafile/logs*  
+Seafile 自上传证书目录：*/data/seafile/ssl*  
 
 Seafile 主目录下包括：conf,seafile-data等重要目录
 
@@ -31,6 +38,11 @@ MySQL 数据持久存储：*/data/mysql*
 
 ### OnlyOffice Document Server
 
+OnlyOffice Document Server 证书持久存储：*/data/certs/onlyoffice_DocumentServer*  
+OnlyOffice Document Server 日志持久存储：*/data/logs/onlyoffice_DocumentServer*  
+OnlyOffice Document Server 数据持久存储：*/data/wwwroot/onlyoffice_DocumentServer/data*  
+OnlyOffice Document Server 配置持久存储：*/data/wwwroot/onlyoffice_DocumentServer/lib*  
+OnlyOffice Document Server 数据库持久存储：*data/onlyoffice_DocumentServer_postgresql*  
 
 ### Docker
 
@@ -38,13 +50,6 @@ Docker 根目录: */var/lib/docker*
 Docker 镜像目录: */var/lib/docker/image*   
 Docker 存储卷：*/var/lib/docker/volumes*  
 Docker daemon.json 文件：默认没有创建，请到 */etc/docker* 目录下根据需要自行创建
-
-### Docker Compose
-
-本环境使用 Docker Compose 作为容器编排（调度）工具，用于管理多个容器的启动和服务连接。
-
-Docker Compose 配置目录 */data/docker-compose.yml*  
-Docker Compose 命令位置：*/usr/local/bin/docker-compose*  
 
 ## 端口号
 

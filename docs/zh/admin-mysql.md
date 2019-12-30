@@ -1,6 +1,6 @@
 # MySQL
 
-Seafile 预装包中内置 PostgreSQL 容器，需要登录容器后使用命令对 MySQL 进行操作。
+Seafile 预装包中内置 MySQL 容器，需要登录容器后使用命令对 MySQL 进行操作。
 
 1. 使用 SSH 登录服务器后，运行`docker ps`命令获取 seafile-mysql 容器ID
   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/awx/awx-getcontainerid-websoft9.png)

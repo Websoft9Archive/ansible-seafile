@@ -10,17 +10,16 @@ Nonetheless, from the perspective of server security and subsequent maintenance 
 
 Seafile domain name binding steps:
 
-1. Connect your Cloud Server
-2. Modify [Nginx vhost configuration file](/stack-components.md#nginx), change the **server_name**'s value *localhost* to your domain name
+1. Use the SFTP to connect your Server
+2. Modify [Docker-compose file](/stack-components.md#docker-compose)
    ```text
-   server {
-      listen 80;
-      server_name    localhost; # Change to a your domain name
+   ...
+    - SEAFILE_SERVER_HOSTNAME=seafile.websoft9.cn # Specifies your host name.
    ...
    ```
-3. Save it and restart [Nginx Service](/admin-services.md#nginx)
+   set the item **SEAFILE_SERVER_HOSTNAME** to your domain
 
-
-## Other
-
-Coming soon
+3. Save it and then restart Docker-compose service
+   ```
+   sudo cd /data && docker-compose up -d
+   ```

@@ -6,7 +6,6 @@
 
 ## Seafile
 
-
 ```shell
 #Seafile-主程序
 sudo docker start seafile
@@ -31,6 +30,15 @@ sudo systemctl start documentserver
 sudo systemctl restart documentserver
 sudo systemctl stop documentserver
 sudo systemctl status documentserver
+```
+
+## Docker Compose
+
+```shell
+#创建容器
+sudo docker-compose up
+#创建容器并重建有变化的容器
+sudo docker-compose up -d
 ```
 
 ## Docker

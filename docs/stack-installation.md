@@ -5,20 +5,29 @@ If you have completed the Seafile deployment on Cloud Platform, the following st
 ## Preparation
 
 1. Get the **Internet IP** on your Cloud Platform
-2. Check you **[Inbound of Security Group Rule](https://support.websoft9.com/docs/faq/tech-instance.html)** of Cloud Console to ensure the TCP:80 is allowed
+2. Check you **[Inbound of Security Group Rule](https://support.websoft9.com/docs/faq/tech-instance.html)** of Cloud Console to ensure TCP:**80 and 9003** allowed
 3. Make a domain resolution on your DNS Console if you want to use domain for Seafile
+
+> 9003 port is used for preview and edit functions of **OnlyOffice Document Server** 
 
 ## Seafile Installation Wizard
 
 1. Using local Chrome or Firefox to visit the URL *http://domain name* or *http://Internet IP*, you will log in interface of Seafile
-   ![Seafile login](https://libs.websoft9.com/Websoft9/DocsPicture/en/awx/awx-login-websoft9.png)
+   ![Seafile login page](http://libs.websoft9.com/Websoft9/DocsPicture/en/seafile/seafile-login-websoft9.png)
 
-2. The Adminitrator console of Seafile... 
-   ![Start Seafile](https://libs.websoft9.com/Websoft9/DocsPicture/en/awx/awxui-websoft9.png)
+2. Input Seafile's username and password[(Get it)](/zh/stack-accounts.md)
+   ![Seafile后台界面](http://libs.websoft9.com/Websoft9/DocsPicture/en/seafile/seafile-bk-websoft9.png)
 
-3. Then start to create: Credentials, Inventories, Project for one Template, use the Template for deployment job
+3. Set your Seafile host URL（**Required, otherwise you cannot use the file upload function**）
 
-> More useful Seafile guide, please refer to [Ansible Tower Documentation](https://docs.ansible.com/ansible-tower/)
+   - SERVICE_URL：*http://Internt IP of Server*
+   - FILE_SERVER_ROOT：*http://Internt IP of Server/seafhttp*
+
+   ![Seafile console UI](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-seturl-websoft9.png)
+
+4. Start to use it
+
+> More details for using Seafile, please use docs: ***[Seafile user guide](https://help.seafile.com/en/)*** and ***[Seafile Server Manual](http://manual.seafile.com/)***
 
 ## Q&A
 
@@ -28,8 +37,8 @@ Your TCP:80 of Security Group Rules is not allowed so there no response from Chr
 
 #### Which database does this Seafile use?
 
-PostgreSQL
+MySQL on Docker
 
-#### The first time loading is slow?
+#### Why use Docker deployment for Seafile?
 
-Yes, Seafile takes nearly a minute to load and runs smoothly after loading
+Is the officially recommended installation method

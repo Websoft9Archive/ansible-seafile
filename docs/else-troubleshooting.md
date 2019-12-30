@@ -18,8 +18,14 @@ systemctl restart mysql
 df -lh
 
 # view memory rate
-free -lh
+free -lh 
 ```
 
-#### Apache httpd service restart error
-Please make sure the vhost.conf is correct for you, and you can track and analyze log files
+#### Seafile upload file error?
+
+You should set the your correct Seafile host after deployment, otherwise you can't upload any files
+
+   - SERVICE_URL：*http://Internet IP of Server*
+   - FILE_SERVER_ROOT：*http:/Internet IP of Server/seafhttp*
+
+   ![Seafile Host settings](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-seturl-websoft9.png)

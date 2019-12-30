@@ -2,45 +2,50 @@
 
 These commands you must know when you using the Seafile of Websoft9
 
-### Seafile
+> Use **start** to enable Container that been stopped,  **restart** to restart Container, **stop** to stop the running Container
+
+## Seafile
 
 ```shell
-sudo systemctl start awx-web
-sudo systemctl stop awx-web
-sudo systemctl restart awx-web
-sudo systemctl status awx-web
+#Seafile
+sudo docker start seafile
+sudo docker restart seafile
+sudo docker stop seafile
 
-sudo systemctl start awx-daphne
-sudo systemctl stop awx-daphne
-sudo systemctl restart awx-daphne
-sudo systemctl status awx-daphne
+#Seafile-memcached
+sudo docker start seafile-memcached
+sudo docker restart seafile-memcached
+sudo docker stop seafile-memcached
 
-sudo systemctl start awx-channels-worker 
-sudo systemctl stop awx-channels-worker 
-sudo systemctl restart awx-channels-worker 
-sudo systemctl status awx-channels-worker 
-
-sudo systemctl start awx-cbreceiver 
-sudo systemctl stop awx-cbreceiver 
-sudo systemctl restart awx-cbreceiver
-sudo systemctl status awx-cbreceiver
+#Seafile-MySQL
+sudo docker start seafile-mysql
+sudo docker restart seafile-mysql
+sudo docker stop seafile-mysql
 ```
 
-### Nginx
+## OnlyOffice DocumentServer
 
 ```shell
-sudo systemctl start nginx
-sudo systemctl stop nginx
-sudo systemctl restart nginx
-sudo systemctl status nginx
+sudo systemctl start documentserver
+sudo systemctl restart documentserver
+sudo systemctl stop documentserver
+sudo systemctl status documentserver
 ```
 
-### PostgreSQL
+## Docker Compose
 
 ```shell
-# 11 is version number of PostgreSQL
-sudo systemctl start postgresql-11
-sudo systemctl stop postgresql-11
-sudo systemctl restart postgresql-11
-sudo systemctl status postgresql-11
+#create dockers
+sudo docker-compose up
+#rebuild dockers
+sudo docker-compose up -d
+```
+
+## Docker
+
+```shell
+sudo systemctl start docker
+sudo systemctl restart docker
+sudo systemctl stop docker
+sudo systemctl status docker
 ```

@@ -24,5 +24,11 @@ yum update -y
 
 ## Seafile升级
 
-升级Seafile通过更新镜像，重新开启来实现，参考官方升级文档：[升级 Seafile 服务
+升级Seafile只需要一条命令即可
+
+```
+sudo cd /data && docker-compose up -d
+```
+
+更多参考官方升级文档：[升级 Seafile 服务
 ](https://manual-cn-origin.seafile.com/deploy/deploy_with_docker#sheng-ji-seafile-fu-wu)

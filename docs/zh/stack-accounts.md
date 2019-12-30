@@ -7,11 +7,11 @@
 管理员用户名：`admin@seafile.local`  
 管理员密码： `admin123`
 
-## PostgreSQL
+## MySQL
 
-本部署方案中，PostgreSQL 采用 Docker 部署：
+本部署方案中，MySQL 采用 Docker 部署：
 
-* 管理员账号：*`postgres`*
+* 管理员账号：*`root`*
 * 管理员密码：存储在您的服务器指定文件中：*/credentials/password.txt*。
 
 ## Linux

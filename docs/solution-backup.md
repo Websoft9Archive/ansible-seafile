@@ -49,8 +49,8 @@ Manual backup for application is based on the **Exporting source code and databa
 ```
 The general manual backup operation steps are as follows:
 
-1. Just compression and download the entire **[Seafile installation directory](/stack-components.md#awx)** by SFTP 
-2. Export Seafile's database by [phpPgAdmin](/zh/admin-postgresql.md)
+1. Just compression and download the entire **[data](/stack-components.md#seafile)** by SFTP 
+2. Export Seafile's MySQL database
 3. Put the source code file and database file in the same folder, named according to the date
 4. Backup completed
 

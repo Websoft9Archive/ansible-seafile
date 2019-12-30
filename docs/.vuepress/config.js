@@ -32,7 +32,7 @@ themeConfig: {
   sidebar: 'auto', // 默认值：false
 
   //Github 
-  repo: 'Websoft9/ansible-awx',
+  repo: 'Websoft9/ansible-seafile',
   editLinks: true,
   docsDir: 'docs',
   docsBranch: 'master',

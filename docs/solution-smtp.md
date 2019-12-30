@@ -4,19 +4,11 @@ Sending mail is a common feature for Seafile. After a large number of user pract
 
 > Do not try to install **Sendmail** or other Mail server software on your Cloud Server for sending mail, because it is very difficulty in maintenance.
 
-Follow is the sample using **SendGrid's SMTP Service** to configure sending mail for Seafile:
-
-1. Log in SendGrid console, prepare your SMTP settings like the follow sample
+1. Use the SFTP to connect Server of Seafile, edit the Seafile configuration file [seahub_settings.py](/stack-components.md#seafile)
+2. Insert your SMPT items (refer to Seafile official docs [sending_email](https://download.seafile.com/published/seafile-manual/config/sending_email.md))
+3. Restart the Seafile service
    ```
-   SMTP host: smtp.sendgrid.net
-   SMTP port: 25 or 587 for unencrypted/TLS email, 465 for SSL-encrypted email
-   SMTP Authentication: must be checked
-   SMTP Encryption: must SSL
-   SMTP username: websoft9smpt
-   SMTP password: #fdfwwBJ8f    
+   sudo docker restart seafile
    ```
-2. Log in Seafile Console, open **ADMINISTRATION** > **NOTIFICATIONS**
-3. Create new Notification template, then complete the SMTP settings
-   ![Seafile SMTP](https://libs.websoft9.com/Websoft9/DocsPicture/zh/awx/awx-smtp-websoft9.png)
 
 > More SMTP Service(Gmail, Hotmail, QQ mail, Yahoo mail, SendGrid and so on)  settings or Issues with SMTP, please refer to Websoft9's *[SMTP Guide](https://support.websoft9.com/docs/faq/tech-smtp.html)*

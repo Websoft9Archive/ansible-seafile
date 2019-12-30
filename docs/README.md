@@ -6,15 +6,15 @@ home: false
 
 This documentation is provided by [Websoft9](https://www.websoft9.com/), it can help users to acquire skills of Seafile Deployment, Installation, Configuration, HTTPS, SMTP, Backup, Upgrade, Connect Instance and more.
 
-[Seafile](https://github.com/ansible/awx) the Ansible Tower's opensource edition,Seafile provides a web-based user interface, REST API, and task engine built on top of Ansible. It is the upstream project for Tower, a commercial derivative of Seafile.
+[Seafile](https://www.seafile.com/home/) is an open source file sync&share solution designed for high reliability, performance and productivity. Sync, share and collaborate across devices and teams. Build your team's knowledge base with Seafile's built-in Wiki feature.
 
-![](https://libs.websoft9.com/Websoft9/DocsPicture/en/awx/awxui-websoft9.png)
+![](https://libs.websoft9.com/Websoft9/DocsPicture/en/seafile/seafile-gui-websoft9.png)
 
 ---
 
 ## Improve
 
-This document will continue to improve and broadly absorb the needs of users. If you have good idea, please don't hesitate to give us feedback by "Edit this page on GitHub", and welcome you to fork this documentation on [Github](https://github.com/Websoft9/ansible-awx)
+This document will continue to improve and broadly absorb the needs of users. If you have good idea, please don't hesitate to give us feedback by "Edit this page on GitHub", and welcome you to fork this documentation on [Github](https://github.com/Websoft9/ansible-seafile)
 
 ## Scope
 

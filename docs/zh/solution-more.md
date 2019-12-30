@@ -10,19 +10,14 @@
 
 Seafile 域名绑定操作步骤：
 
-1. 登录云服务器
-2. 修改 [Nginx虚拟机主机配置文件](/zh/stack-components.md#nginx)，将其中的 **server_name** 项的值 *localhost* 修改为你的域名
+1. 使用 SFTP 登录云服务器
+2. 修改 [Docker-compose 配置文件](/zh/stack-components.md#docker-compose)，将其中的 **SEAFILE_SERVER_HOSTNAME** 项的值为你的域名
    ```text
-   server {
-      listen 80;
-      server_name    localhost; # 改为自定义域名
+   ...
+    - SEAFILE_SERVER_HOSTNAME=seafile.websoft9.cn # Specifies your host name.
    ...
    ```
-3. 保存配置文件，重启[ Nginx 服务](/zh/admin-services.md#nginx)
-4. 登录Seafile，依次打开：【Settings】>【System】，修改下图的 URL 地址
-   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/awx/awx-seturl-websoft9.png)
-
-
-## 迁移
-
-暂无
+3. 保存配置文件，重启 Docker-compose服务
+   ```
+   sudo cd /data && docker-compose up -d
+   ```
