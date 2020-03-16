@@ -4,11 +4,9 @@
   hosts: all
   become: yes
   become_method: sudo
+  
   vars_files:
     - vars/main.yml
-
-  vars:
-    mysql_users: wordpress
 
   roles:
     - {role: role_common, tags: "role_common"}
