@@ -9,10 +9,10 @@
     - vars/main.yml
 
   roles:
-    - {role: role_common, tags: "role_common"}
-    - {role: role_cloud, tags: "role_cloud"}
-    - {role: role_docker, tags: "role_docker"}
+          #    - {role: role_common, tags: "role_common"}
+          #    - {role: role_cloud, tags: "role_cloud"}
+          #    - {role: role_docker, tags: "role_docker"}
     - {role: seafile, tags: "seafile"}
     - {role: role_docker_onlyofficedocumentserver, tags: "role_docker_onlyofficedocumentserver"}
     - {role: role_preend, tags: "role_preend"}
-    - {role: role_end, tags: "role_end"}
+      #    - {role: role_end, tags: "role_end"}
