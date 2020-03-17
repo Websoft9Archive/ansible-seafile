@@ -4,7 +4,7 @@
 
 ## To do
 * 应用密码随机化
-* 数据库容器密码随机化
+* 数据库容器 root 密码随机化
 * documentserver 503错误
 
 ## Logs
