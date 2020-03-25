@@ -4,3 +4,6 @@ MYSQL_DATA_PATH: /data/mysql
 SEAFILE_DATA_PATH: /data/seafile
 SEAFILE_ADMIN_EMAIL: admin@admin.com
 SEAFILE_ADMIN_PASSWORD: admin123
+
+docker_applications: 
+  - onlyofficedocumentserver
