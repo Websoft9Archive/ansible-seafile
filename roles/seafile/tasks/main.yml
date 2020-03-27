@@ -14,5 +14,6 @@
     dest: /data/docker-compose.yml
     
 - name: run docker-compose
-  docker_compose:
-    project_src: /data/
+  shell: docker-compose up -d 
+  args:
+    chdir: /data
