@@ -1,6 +1,7 @@
-MYSQL_ROOT_PASSWORD: 123456
-MYSQL_DATA_PATH: /data/mysql
+docker_application:
+    - onlyofficedocumentserver
 
-SEAFILE_DATA_PATH: /data/seafile
-SEAFILE_ADMIN_EMAIL: admin@admin.com
-SEAFILE_ADMIN_PASSWORD: admin123
+init_db: 
+  docker:
+    password: '123456'
+    path: /data/docker-compose.yml  # docker-compose file path

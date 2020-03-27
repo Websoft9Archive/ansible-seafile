@@ -7,7 +7,7 @@
 - src: https://github.com/websoft9dev/role_docker
   version: master
 
-- src: https://github.com/websoft9dev/role_docker_onlyofficedocumentserver
+- src: https://github.com/websoft9dev/role_init_password
   version: master
 
 - src: https://github.com/websoft9dev/role_preend

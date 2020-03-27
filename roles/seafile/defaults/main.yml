@@ -1,6 +1,6 @@
-MYSQL_ROOT_PASSWORD: 123456
-MYSQL_DATA_PATH: /data/mysql
+seafile_mysql_root_password: "123456"
+seafile_mysql_data_path: /data/mysql
 
-SEAFILE_DATA_PATH: /data/seafile
-SEAFILE_ADMIN_EMAIL: admin@admin.com
-SEAFILE_ADMIN_PASSWORD: admin123
+seafile_DATA_PATH: /data/seafile
+seafile_ADMIN_EMAIL: admin@admin.com
+seafile_ADMIN_PASSWORD: admin123
