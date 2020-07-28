@@ -1,5 +1,6 @@
 docker_applications:
     - onlyofficedocumentserver
+    - phpmyadmin
 
 init_db: 
   docker:
