@@ -11,4 +11,4 @@
 - name: Create soft link
   shell: |
     ln -sf /opt/seafile-data  /data/wwwroot
-    ln -sf /opt/seafile-mysql  /data/wwwroot
+    ln -sf /opt/seafile-mysql  /data
