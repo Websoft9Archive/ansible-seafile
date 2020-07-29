@@ -1,19 +1,14 @@
-- name: Create volume 
-  file:
-    path: "{{item}}"
-    state: directory
-    mode: 0755
-  with_items:
-    - /data/mysql
-    - /data/seafile
-    - /data/seafile/ssl
-
 - name: copy docker-compose.yml
   template:
     src: docker-compose.yml
     dest: /data/docker-compose.yml
-    
+
 - name: run docker-compose
   shell: docker-compose up -d 
   args:
     chdir: /data
+    
+- name: Create soft link
+  shell: |
+    ln -sf /opt/seafile-data  /data/wwwroot
+    ln -sf /opt/seafile-mysql  /data/wwwroot
