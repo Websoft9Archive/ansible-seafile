@@ -5,7 +5,7 @@ docker_applications:
     - phpmyadmin
 
 init_docker:
-  awx:
+  seafile:
     admin_username: me@example.com
     admin_password: "admin123"
     db: mysql
