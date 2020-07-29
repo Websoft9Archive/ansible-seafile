@@ -6,7 +6,7 @@ docker_applications:
 
 init_docker:
   awx:
-    admin_username: admin
+    admin_username: me@example.com
     admin_password: "admin123"
     db: mysql
     db_name: seafile_db
