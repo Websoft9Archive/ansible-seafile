@@ -4,7 +4,7 @@ services:
     image: mariadb:10.1
     container_name: seafile-mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=db_dev  # Requested, set the root's password of MySQL service.
+      - MYSQL_ROOT_PASSWORD=123456
       - MYSQL_LOG_CONSOLE=true
     volumes:
       - /opt/seafile-mysql/db:/var/lib/mysql  # Requested, specifies the path to MySQL data persistent store.
@@ -23,22 +23,33 @@ services:
     container_name: seafile
     ports:
       - "80:80"
-#      - "443:443"  # If https is enabled, cancel the comment.
+#      - "443:443"
     volumes:
-      - /opt/seafile-data:/shared   # Requested, specifies the path to Seafile data persistent store.
+      - /opt/seafile-data:/shared
     environment:
       - DB_HOST=db
-      - DB_ROOT_PASSWD=db_dev  # Requested, the value shuold be root's password of MySQL service.
-#      - TIME_ZONE=Asia/Shanghai # Optional, default is UTC. Should be uncomment and set to your local time zone.
-      - SEAFILE_ADMIN_EMAIL=me@example.com # Specifies Seafile admin user, default is 'me@example.com'.
-      - SEAFILE_ADMIN_PASSWORD=asecret     # Specifies Seafile admin password, default is 'asecret'.
-      - SEAFILE_SERVER_LETSENCRYPT=false   # Whether use letsencrypt to generate cert.
-      - SEAFILE_SERVER_HOSTNAME=seafile.example.com # Specifies your host name.
+      - DB_ROOT_PASSWD=123456
+      - TIME_ZONE=Asia/Shanghai
+      - SEAFILE_ADMIN_EMAIL=me@example.com
+      - SEAFILE_ADMIN_PASSWORD=asecret
+      - SEAFILE_SERVER_LETSENCRYPT=false
+      - SEAFILE_SERVER_HOSTNAME=seafile.example.com
     depends_on:
       - db
       - memcached
     networks:
       - seafile-net
-
+  
+  # add by Websoft9
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin
+    ports:
+      - "9090:80"
+    depends_on:
+      - db
+    networks:
+      - seafile-net
+      
 networks:
   seafile-net:
