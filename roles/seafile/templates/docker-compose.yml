@@ -7,6 +7,7 @@ services:
   db:
     image: mariadb:10.1
     container_name: seafile-mysql
+    restart: always
     environment:
       - MYSQL_ROOT_PASSWORD={{seafile_mysql_root_password}}
       - MYSQL_LOG_CONSOLE=true
@@ -18,6 +19,7 @@ services:
   memcached:
     image: memcached:1.5.6
     container_name: seafile-memcached
+    restart: always
     entrypoint: memcached -m 256
     networks:
       - seafile-net
@@ -25,6 +27,7 @@ services:
   seafile:
     image: seafileltd/seafile-mc:latest
     container_name: seafile
+    restart: always
     ports:
       - "80:80"
       - "443:443"
@@ -48,6 +51,7 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     container_name: phpmyadmin
+    restart: always
     ports:
       - "9090:80"
     depends_on:
