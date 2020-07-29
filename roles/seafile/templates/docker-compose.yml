@@ -1,3 +1,6 @@
+# Please don't replace this file directly when Seafile have new version, you should merge it
+# add1 restart: always
+# add2 phpmyadmin
 
 version: '2.0'
 services:
