@@ -13,5 +13,6 @@
     - {role: role_cloud, tags: "role_cloud"}
     - {role: role_docker, tags: "role_docker"}
     - {role: seafile, tags: "seafile"}
+    - {role: role_init_password, tags: "role_init_password"}
     - {role: role_preend, tags: "role_preend"}
     - {role: role_end, tags: "role_end"}
