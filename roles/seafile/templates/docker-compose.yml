@@ -1,10 +1,11 @@
+
 version: '2.0'
 services:
   db:
     image: mariadb:10.1
     container_name: seafile-mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_ROOT_PASSWORD={{seafile_mysql_root_password}}
       - MYSQL_LOG_CONSOLE=true
     volumes:
       - /opt/seafile-mysql/db:/var/lib/mysql  # Requested, specifies the path to MySQL data persistent store.
@@ -23,15 +24,15 @@ services:
     container_name: seafile
     ports:
       - "80:80"
-#      - "443:443"
+      - "443:443"
     volumes:
       - /opt/seafile-data:/shared
     environment:
       - DB_HOST=db
-      - DB_ROOT_PASSWD=123456
+      - DB_ROOT_PASSWD={{seafile_mysql_root_password}}
       - TIME_ZONE=Asia/Shanghai
-      - SEAFILE_ADMIN_EMAIL=me@example.com
-      - SEAFILE_ADMIN_PASSWORD=asecret
+      - SEAFILE_ADMIN_EMAIL={{seafile_admin_email}}
+      - SEAFILE_ADMIN_PASSWORD={{seafile_admin_password}}
       - SEAFILE_SERVER_LETSENCRYPT=false
       - SEAFILE_SERVER_HOSTNAME=seafile.example.com
     depends_on:
