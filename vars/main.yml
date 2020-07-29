@@ -1,7 +1,19 @@
+region: "0"
+common_os_support: ["CentOS", "Ubuntu", "Amazon"]
+
 docker_applications:
     - phpmyadmin
 
-init_db: 
-  docker:
-    password: '123456'
-    path: /data/docker-compose.yml
+init_docker:
+  awx:
+    admin_username: admin
+    admin_password: "admin123"
+    db: mysql
+    db_name: seafile_db
+    db_username: root
+    db_password: "123456"
+    service_after: "docker.service"
+    compose_path: "/data/.awx/docker-compose.yml"
+    volumes: 
+      - /opt/seafile-mysql
+      - /opt/seafile-data
