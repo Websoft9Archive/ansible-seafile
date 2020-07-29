@@ -1,3 +1,8 @@
+#1 install Seafile by OS_family
+- name: Install this role on {{ansible_os_family}}
+  include: "{{ansible_os_family}}.yml"
+ 
+#2 Run Docker compose
 - name: copy docker-compose.yml
   template:
     src: docker-compose.yml
@@ -8,7 +13,14 @@
   args:
     chdir: /data
     
+#3 UX Settings    
 - name: Create soft link
   shell: |
     ln -sf /opt/seafile-data  /data/wwwroot
     ln -sf /opt/seafile-mysql  /data
+    
+# check service state
+- name: Check Seafile Service
+  shell: docker ps
+  register: check_seafile_service
+  notify: check_seafile_service
