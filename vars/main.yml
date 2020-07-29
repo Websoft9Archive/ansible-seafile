@@ -1,8 +1,8 @@
 region: "0"
 common_os_support: ["CentOS", "Ubuntu", "Amazon"]
 
-#docker_applications:
-#    - phpmyadmin
+docker_applications: 
+  - onlyofficedocumentserver
 
 init_docker:
   seafile:
