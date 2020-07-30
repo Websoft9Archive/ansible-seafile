@@ -1,6 +1,16 @@
 # MySQL
 
-Seafile deployment package includes MySQL, refer to these steps to use it:
+Seafile deployment package includes MySQL and GUI tools phpMyAdmin, refer to these steps to use it:
+
+## GUI
+
+1. Using the Chrome or FireFox to visit URL *http://Internet IP:9090*
+  ![log in phpMyadmin](https://libs.websoft9.com/Websoft9/DocsPicture/en/mysql/mysql-login-websoft9.png)
+3. Enter username and password of MySQL([Don't known password?](/stack-accounts.md))
+4. Start to manage MySQL now
+  ![phpMyadmin](https://libs.websoft9.com/Websoft9/DocsPicture/en/phpmyadmin/phpmyadmin-createdb-websoft9.png)
+
+## Command
 
 1. Use the SSH to connect your Server of Seafile, then run the command `docker ps` to list all containers
   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/awx/awx-getcontainerid-websoft9.png)

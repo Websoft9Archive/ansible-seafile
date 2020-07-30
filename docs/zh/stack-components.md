@@ -26,15 +26,20 @@ Docker Compose 命令位置：*/usr/local/bin/docker-compose*
 
 ### Seafile
 
-Seafile 主目录：*/data/seafile/seafile*  
-Seafile 日志目录：*/data/seafile/logs*  
+Seafile 配置文件： */opt/seafile-data/seafile/conf/seafile.conf*
+Seafile 主目录：*/data/wwwroot/seafile/seafile*  
+Seafile 日志目录：*/data/wwwroot/seafile/logs*  
 Seafile 自上传证书目录：*/data/seafile/ssl*  
 
 Seafile 主目录下包括：conf,seafile-data等重要目录
 
 ### MySQL
 
-MySQL 数据持久存储：*/data/mysql*
+MariaDB 数据持久存储：*/data/mysql*
+
+### phpMyAdmin
+
+基于 Docker 运行的 MariaDB 可视化管理工具，访问地址：*http://服务器公网IP:9090*
 
 ### OnlyOffice Document Server
 
@@ -59,6 +64,7 @@ Docker daemon.json 文件：默认没有创建，请到 */etc/docker* 目录下�
 | --- | --- | --- | --- |
 | HTTP | 80 | 通过 http 访问 Seafile | 必须 |
 | HTTPS | 443 | 通过 https 访问 Seafile | 可选 |
+| HTTP | 9090 | 通过 http 访问 phpMyAdmin | 可选 |
 | HTTP | 9002 | 通过 http 访问 OnlyOffice Document Server | 可选 |
 | HTTPS | 9003 | 通过 https访问 OnlyOffice Document Server | 可选 |
 

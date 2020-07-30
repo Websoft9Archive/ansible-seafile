@@ -1,18 +1,18 @@
 # 账号密码
 
-使用Seafile，可能会用到的几组账号密码如下：
+使用 Seafile，可能会用到的几组账号密码如下：
 
 ## Seafile
 
-管理员用户名：`admin@seafile.local`  
-管理员密码： `admin123`
+管理员用户名：`me@example.com`  
+管理员密码： 存储在您的服务器指定文件中：*/credentials/password.txt*
 
 ## MySQL
 
 本部署方案中，MySQL 采用 Docker 部署：
 
 * 管理员账号：*`root`*
-* 管理员密码：存储在您的服务器指定文件中：*/credentials/password.txt*。
+* 管理员密码：存储在您的服务器指定文件中：*/credentials/password.txt*
 
 ## Linux
 
