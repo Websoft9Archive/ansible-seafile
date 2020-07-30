@@ -10,7 +10,7 @@ Seafile 开源版支持集成 OnlyOffice Document Server 作为 Office 格式的
 
 ## 配置
 
-1. 使用 SFTP 连接服务器，编辑 Seafile 配置文件
+1. 使用 SFTP 连接服务器，编辑 Seafile 配置文件/opt/seafile-data/seafile/conf/seahub_settings.py
 2. 插入下面的模板
    ```
    # Enable Only Office
