@@ -4,8 +4,8 @@ Seafile 开源版支持集成 OnlyOffice Document Server 作为 Office 格式的
 
 ## 前置条件
 
-1. 在云控制台安全组中，检查 **TCP:9003** 端口是否开启
-2. 使用本地电脑浏览器测试文档服务是否可用：打开网址：https://服务器公网IP:9002，会看到 OnlyOffice Document Server 正在运行的提示 
+1. 在云控制台安全组中，检查 **TCP:9002** 端口是否开启
+2. 使用本地电脑浏览器测试文档服务是否可用：打开网址：http://服务器公网IP:9002，会看到 OnlyOffice Document Server 正在运行的提示 
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/onlyoffice/onlyoffice-dkisrunning-websoft9.png)
 
 ## 配置
