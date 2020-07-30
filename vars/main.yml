@@ -17,7 +17,7 @@ init_docker:
     volumes: 
       - /opt/seafile-mysql
       - /opt/seafile-data
-    command: 
+    commands: 
       - sleep 30s
       - sed -i "s/seafile.example.com/$(curl ifconfig.me)/g" /opt/seafile-data/seafile/conf/seahub_settings.py
       - sed -i "s/seafile.example.com/$(curl ifconfig.me)/g" /opt/seafile-data/seafile/conf/ccnet.conf
