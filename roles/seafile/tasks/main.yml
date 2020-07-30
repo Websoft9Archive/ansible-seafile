@@ -9,7 +9,9 @@
     dest: /data/docker-compose.yml
 
 - name: run docker-compose
-  shell: docker-compose up -d 
+  shell: |
+    docker-compose up -d 
+    sleep 30s
   args:
     chdir: /data
 
