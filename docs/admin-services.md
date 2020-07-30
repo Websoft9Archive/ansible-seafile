@@ -4,10 +4,10 @@ These commands you must know when you using the Seafile of Websoft9
 
 > Use **start** to enable Container that been stopped,  **restart** to restart Container, **stop** to stop the running Container
 
-## Seafile
+#### Seafile
 
 ```shell
-#Seafile
+#Seafile-主程序
 sudo docker start seafile
 sudo docker restart seafile
 sudo docker stop seafile
@@ -23,16 +23,25 @@ sudo docker restart seafile-mysql
 sudo docker stop seafile-mysql
 ```
 
-## OnlyOffice DocumentServer
+### phpMyAdmin
 
 ```shell
-sudo systemctl start documentserver
-sudo systemctl restart documentserver
-sudo systemctl stop documentserver
-sudo systemctl status documentserver
+sudo docker restart phpmyadmin
+sudo docker stop phpmyadmin
+sudo docker start phpmyadmin
+sudo docker stats phpmyadmin
 ```
 
-## Docker Compose
+### OnlyOffice DocumentServer
+
+```shell
+sudo docker restart onlyoffice-documentserver
+sudo docker stop onlyoffice-documentserver
+sudo docker start onlyoffice-documentserver
+sudo docker stats onlyoffice-documentserver
+```
+
+### Docker Compose
 
 ```shell
 #create dockers
@@ -41,7 +50,7 @@ sudo docker-compose up
 sudo docker-compose up -d
 ```
 
-## Docker
+### Docker
 
 ```shell
 sudo systemctl start docker

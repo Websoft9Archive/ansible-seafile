@@ -1,6 +1,6 @@
 # Office 文档预览与编辑
 
-Seafile 开源版支持集成 OnlyOffice Document Server 作为 Office 格式的文档预览与编辑，而本部署解决默认已经安装 OnlyOffice Document Server，只需设置即可使用
+Seafile 开源版支持集成 OnlyOffice Document Server 作为 Office 格式的文档预览与编辑，而本部署解决默认已经安装 OnlyOffice Document Server，无需设置即可使用
 
 ## 前置条件
 
@@ -13,7 +13,7 @@ Seafile 开源版支持集成 OnlyOffice Document Server 作为 Office 格式的
 ## 配置
 
 1. 使用 SFTP 连接服务器，编辑 Seafile 配置文件/opt/seafile-data/seafile/conf/seahub_settings.py
-2. 插入下面的模板
+2. 插入下面的模板（或对已经存在的模板进行修改）
    ```
    # Enable Only Office
    ENABLE_ONLYOFFICE = True
@@ -30,3 +30,4 @@ Seafile 开源版支持集成 OnlyOffice Document Server 作为 Office 格式的
    ```
 
 4. 打开 Seafile 控制台，试一试预览或编辑文档
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-onlyofficepr-websoft9.png)

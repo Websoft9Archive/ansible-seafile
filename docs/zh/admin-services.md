@@ -4,7 +4,7 @@
 
 > start 启动一个被停止的容器；restart 重启容器；stop 停止正在运行的容器
 
-## Seafile
+### Seafile
 
 ```shell
 #Seafile-主程序
@@ -23,16 +23,25 @@ sudo docker restart seafile-mysql
 sudo docker stop seafile-mysql
 ```
 
-## OnlyOffice DocumentServer
+### phpMyAdmin
 
 ```shell
-sudo systemctl start documentserver
-sudo systemctl restart documentserver
-sudo systemctl stop documentserver
-sudo systemctl status documentserver
+sudo docker restart phpmyadmin
+sudo docker stop phpmyadmin
+sudo docker start phpmyadmin
+sudo docker stats phpmyadmin
 ```
 
-## Docker Compose
+### OnlyOffice DocumentServer
+
+```shell
+sudo docker restart onlyoffice-documentserver
+sudo docker stop onlyoffice-documentserver
+sudo docker start onlyoffice-documentserver
+sudo docker stats onlyoffice-documentserver
+```
+
+### Docker Compose
 
 ```shell
 #创建容器
@@ -41,7 +50,7 @@ sudo docker-compose up
 sudo docker-compose up -d
 ```
 
-## Docker
+### Docker
 
 ```shell
 sudo systemctl start docker
