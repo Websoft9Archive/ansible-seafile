@@ -20,3 +20,4 @@ init_docker:
     command: 
       - sed -i "s/seafile.example.com/$(curl ifconfig.me)/g" /opt/seafile-data/seafile/conf/seahub_settings.py
       - sed -i "s/seafile.example.com/$(curl ifconfig.me)/g" /opt/seafile-data/seafile/conf/ccnet.conf
+      - sudo docker restart seafile
