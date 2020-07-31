@@ -4,13 +4,13 @@
 
 Yes, more than just Chinese and English
 
-#### How Seafile connect with MySQL?
+#### How Seafile connect with MariaDB/MySQL?
 
 Container internal connection, container orchestration
 
 #### Can Seafile preview and edit the Office files by default?
 
-No, you should configure **OnlyOffice Document Server** in your Seafile console
+Yes, OnlyOffice Document Server installed
 
 #### If there is no domain name, can I deploy Seafile?
 
@@ -22,7 +22,7 @@ The password is stored in the server related file: `/credentials/password.txt`
 
 #### Is there a web-base GUI database management tools?
 
-No
+Yes, phpMyAdmin on Docker installed
 
 #### Is it possible to modify the source path of Seafile?
 

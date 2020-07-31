@@ -25,3 +25,11 @@ df -lh
 # 查看内存使用
 free -lh
 ```
+
+#### Seafile 无法打开？
+
+查看启动日志，分析错误原因
+
+```
+docker logs seafile
+```

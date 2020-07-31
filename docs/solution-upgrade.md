@@ -26,11 +26,10 @@ yum update -y
 
 ## Seafile Upgrade
 
-Just one command for Seafile upgrading
+Modify the version information in the file: */data/docker-compose.yml*, run the command below
 
 ```
 sudo cd /data && docker-compose up -d
 ```
 
-More details please refer to official docs [Seafile upgrade
-](https://download.seafile.com/published/seafile-manual/deploy/deploy_with_docker.md)
+More details please refer to official docs [Seafile upgrade](https://download.seafile.com/published/seafile-manual/deploy/deploy_with_docker.md)

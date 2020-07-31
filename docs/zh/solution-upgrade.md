@@ -24,11 +24,12 @@ yum update -y
 
 ## Seafile升级
 
-升级Seafile只需要一条命令即可
+1. 检查 /data/docker-compose.yml 文件是否满足最新版本要求
+2. 重新运行 docker-compose 编排文件
+    ```
+    cd /data 
+    docker-compose down -v
+    docker-compose up -d
+    ```
 
-```
-sudo cd /data && docker-compose up -d
-```
-
-更多参考官方升级文档：[升级 Seafile 服务
-](https://manual-cn-origin.seafile.com/deploy/deploy_with_docker#sheng-ji-seafile-fu-wu)
+更多参考官方升级文档：[升级 Seafile 服务](https://manual-cn-origin.seafile.com/deploy/deploy_with_docker#sheng-ji-seafile-fu-wu)

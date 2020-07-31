@@ -1,8 +1,8 @@
-# MySQL
+# MariaDB/MySQL
 
 Seafile deployment package includes MySQL and GUI tools phpMyAdmin, refer to these steps to use it:
 
-## GUI
+### Manage MySQL by GUI
 
 1. Using the Chrome or FireFox to visit URL *http://Internet IP:9090*
   ![log in phpMyadmin](https://libs.websoft9.com/Websoft9/DocsPicture/en/mysql/mysql-login-websoft9.png)
@@ -10,15 +10,15 @@ Seafile deployment package includes MySQL and GUI tools phpMyAdmin, refer to the
 4. Start to manage MySQL now
   ![phpMyadmin](https://libs.websoft9.com/Websoft9/DocsPicture/en/phpmyadmin/phpmyadmin-createdb-websoft9.png)
 
-## Command
+### Manage MySQL by CMD
 
 1. Use the SSH to connect your Server of Seafile, then run the command `docker ps` to list all containers
   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/awx/awx-getcontainerid-websoft9.png)
 
-2. Get the container ID of MySQL, and use the following command to login **seafile-mysql** container
+2. Get the container ID or Name of MySQL, and use the following command to login **seafile-mysql** container
 
    ```
-   docker exec -it true 2ca9ad211678 /bin/bash
+   docker exec -it true seafile-mysql /bin/bash
    ```
 3. You can use any MySQL commands if you have connect to **seafile-mysql** container successfully
 

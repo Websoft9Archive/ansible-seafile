@@ -1,6 +1,6 @@
 # Office 文档预览与编辑
 
-Seafile 开源版支持集成 OnlyOffice Document Server 作为 Office 格式的文档预览与编辑，而本部署解决默认已经安装 OnlyOffice Document Server，无需设置即可使用
+Seafile 开源版支持集成 OnlyOffice Document Server 作为 Office 格式的文档预览与编辑，且本部署方案默认安装 OnlyOffice Document Server，无需设置即可使用
 
 ## 前置条件
 
@@ -18,11 +18,11 @@ Seafile 开源版支持集成 OnlyOffice Document Server 作为 Office 格式的
    # Enable Only Office
    ENABLE_ONLYOFFICE = True
    VERIFY_ONLYOFFICE_CERTIFICATE = False
-   ONLYOFFICE_APIJS_URL = 'http://119.8.39.175:9002/web-apps/apps/api/documents/api.js'
+   ONLYOFFICE_APIJS_URL = 'http://example.seafile.com:9002/web-apps/apps/api/documents/api.js'
    ONLYOFFICE_FILE_EXTENSION = ('doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx', 'odt', 'fodt', 'odp', 'fodp', 'ods', 'fods')
    ONLYOFFICE_EDIT_FILE_EXTENSION = ('docx', 'pptx', 'xlsx')
    ```
-   > ONLYOFFICE_APIJS_URL 字段中的 IP 地址请更改为你的服务器公网IP地址。如果启用 https，URL地址改成 https 开头
+   > ONLYOFFICE_APIJS_URL 字段中的 **example.seafile.com** 地址请更改为你的服务器公网IP地址或域名。如果 OnlyOffice 已启用 https，URL地址改成 https 开头
 
 3. 重启 Seafile 容器服务
    ```

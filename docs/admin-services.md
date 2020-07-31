@@ -4,10 +4,10 @@ These commands you must know when you using the Seafile of Websoft9
 
 > Use **start** to enable Container that been stopped,  **restart** to restart Container, **stop** to stop the running Container
 
-#### Seafile
+### Seafile
 
 ```shell
-#Seafile-主程序
+#Seafile
 sudo docker start seafile
 sudo docker restart seafile
 sudo docker stop seafile

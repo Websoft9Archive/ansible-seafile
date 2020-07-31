@@ -5,7 +5,7 @@
 ## 准备
 
 1. 在云控制台获取您的 **服务器公网IP地址** 
-2. 在云控制台安全组中，检查 **Inbound（入）规则** 下的 **TCP:80** 和 **TCP:9003** 端口是否开启
+2. 在云控制台安全组中，检查 **Inbound（入）规则** 下的 **TCP:80** 和 **TCP:9002** 端口是否开启
 3. 若想用域名访问 Seafile，请先到 **域名控制台** 完成一个域名解析
 
 > 9003 是用于文档预览和编辑的 OnlyOffice Document Server 服务所需的端口
@@ -18,7 +18,7 @@
 2. 输入用户名和密码[（查看）](/zh/stack-accounts.md)，登录到Seafile后台管理界面
    ![Seafile后台界面](http://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-bk-websoft9.png)
 
-3. 设置 Seafile 的主机地址（**必选项，否则无法使用文件上传功能**）
+3. 设置（检查） Seafile 的真实主机地址（**必选项，否则无法使用文件上传功能**）
 
    - SERVICE_URL：*http://服务器公网IP*
    - FILE_SERVER_ROOT：*http://服务器公网IP/seafhttp*
@@ -38,8 +38,12 @@
 
 #### 本部署包采用的哪个数据库来存储 Seafile 数据？
 
-MySQL on Docker
+MariaDB/MySQL on Docker
 
 #### 为什么使用 Docker 安装 Seafile？
 
 是官方推荐的安装方式
+
+#### 默认是否支持文档预览与编辑？
+
+支持

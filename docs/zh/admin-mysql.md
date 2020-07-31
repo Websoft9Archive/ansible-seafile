@@ -16,13 +16,13 @@ Seafile 预装包中内置 MySQL 容器以及可视化管理工具 phpMyAdmin。
 
 可以登录容器后使用命令对 MySQL 进行操作。
 
-1. 使用 SSH 登录服务器后，运行`docker ps`命令获取 seafile-mysql 容器ID
+1. 使用 SSH 登录服务器后，运行`docker ps`命令获取 Name 或 ID
   ![](https://libs.websoft9.com/Websoft9/DocsPicture/en/awx/awx-getcontainerid-websoft9.png)
 
 2. 进入 seafile-mysql 容器操作界面
 
    ```
-   docker exec -it 5256509b7a09 /bin/bash
+   docker exec -it seafile-mysql /bin/bash
    ```
 3. 使用 mysql 命令登录数据库
    ```

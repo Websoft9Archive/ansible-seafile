@@ -4,7 +4,7 @@ Seafile opensource edition supports the **OnlyOffice Document Server** for file 
 
 ## Preparation
 
-1. Enable the **TCP:9003** port in your **[Inbound of Security Group Rule](https://support.websoft9.com/docs/faq/tech-instance.html)** of Cloud Console
+1. Enable the **TCP:9002** port in your **[Inbound of Security Group Rule](https://support.websoft9.com/docs/faq/tech-instance.html)** of Cloud Console
 2. Use the Chrome or Firefox to test it: visit the URL https://Internt IP of Server:9003, you can see the information **Document Server is running**
    ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/onlyoffice/onlyoffice-dkisrunning-websoft9.png)
 
@@ -16,11 +16,11 @@ Seafile opensource edition supports the **OnlyOffice Document Server** for file 
    # Enable Only Office
    ENABLE_ONLYOFFICE = True
    VERIFY_ONLYOFFICE_CERTIFICATE = False
-   ONLYOFFICE_APIJS_URL = 'https://119.8.39.175:9003/web-apps/apps/api/documents/api.js'
+   ONLYOFFICE_APIJS_URL = 'https://example.seafile.com:9002/web-apps/apps/api/documents/api.js'
    ONLYOFFICE_FILE_EXTENSION = ('doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx', 'odt', 'fodt', 'odp', 'fodp', 'ods', 'fods')
    ONLYOFFICE_EDIT_FILE_EXTENSION = ('docx', 'pptx', 'xlsx')
    ```
-   > Set **IP** to your Server's Internet IP for the item **ONLYOFFICE_APIJS_URL**
+   > Set **ONLYOFFICE_APIJS_URL**, e.g example.seafile.com to your domain or Internet IP
 
 3. Restart the Docker of Seafile
    ```

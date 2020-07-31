@@ -1,17 +1,20 @@
 # Username and Password
 
+You use the **SSH** to connect your Server and run the command `sudo cat /credentials/password.txt` to get the username and password of this deployment solution.
+
+![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/common/catdbpassword-websoft9.png)
+
 These accounts are required for Seafile image installation and configuration
 
 ## Seafile
 
-Seafile administrator username: `admin@seafile.local`  
-Seafile administrator password: `admin123`  
+Seafile administrator username: `me@example.com`  
+Seafile administrator password: stored in the file of your server */credentials/password.txt*
 
-## MySQL
+## MariaDB/MySQL
 
 * Administrator username: *`root`*
-* Administrator password: stored in the file of your server instance: */credentials/password.txt*. You use the **online SSH interface on Cloud Console** and run the command `cat /credentials/password.txt` to get the database password
-   ![Run the cat command](https://libs.websoft9.com/Websoft9/DocsPicture/zh/common/catdbpassword-websoft9.png)
+* Administrator password: stored in the file of your server */credentials/password.txt*
 
 > If you want to log in MySQL, refer to [MySQL Management](/admin-mysql.md)
 

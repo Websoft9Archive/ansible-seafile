@@ -23,3 +23,27 @@ Seafile domain name binding steps:
    ```
    sudo cd /data && docker-compose up -d
    ```
+
+
+## Docker-compose 配置文件
+
+You can reset [Docker-compose file](/stack-components.md#docker-compose) for more settings, includes:
+
+### Reset Seafile administrator password
+
+If you have forgotten the Seafile administrator password, modify the item below:
+
+```text
+- SEAFILE_ADMIN_PASSWORD=KkK303Ye4LmkC4h
+```
+
+### MariaDB/MySQL 连接配置
+
+If you have modify the MariaDB/MySQL root password, Seafile will not running normally. You should modify the items below:
+
+```text
+- MYSQL_ROOT_PASSWORD=KkK303Ye4LmkC4h
+- DB_ROOT_PASSWD=KkK303Ye4LmkC4h
+```
+
+> Completed the modification of compose file, run the command `sudo cd /data && docker-compose up -d` for take effect.

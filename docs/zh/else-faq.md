@@ -4,25 +4,29 @@
 
 支持多种语言（中文，英文等）
 
+#### 为什么采用 Docker 方式部署 Seafile？
+
+官方推荐
+
 #### Seafile 是如何与MySQL 连接的？
 
 容器内部连接，即容器编排
 
 #### Seafile 默认能否对文档进行预览和编辑？
 
-不可以，需要先设置 OnlyOffice Document Server 文档服务器
+支持，如果不能预览，请参考[Office设置](/zh/solution-office.md)
 
 #### 如果没有域名是否可以部署 Seafile？
 
 可以，访问`http://服务器公网IP` 即可
 
-#### 如何管理 MySQL 数据库？
+#### 如何管理 MySQL/MariaDB 数据库？
 
 参考本文档的 [MySQL 章节](/zh/admin-mysql.md)
 
 #### 是否有可视化的数据库管理工具？
 
-为了安全考虑，没有提供可视化的数据库管理工具
+有，提供可视化的数据库管理工具 phpMyAdmin
 
 #### 是否可以修改Seafile的数据路径？
 
