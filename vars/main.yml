@@ -14,6 +14,10 @@ init_docker:
     db_password: "123456"
     service_after: "docker.service"
     compose_path: "/data/docker-compose.yml"
+    compose_commands:
+      - 'sed -i "s/MYSQL_ROOT_PASSWORD=.*/MYSQL_ROOT_PASSWORD=$new_password/g" /data/docker-compose.yml'
+      - 'sed -i "s/DB_ROOT_PASSWD=.*/DB_ROOT_PASSWD=$new_password/g" /data/docker-compose.yml'
+      - 'sed -i "s/SEAFILE_ADMIN_PASSWORD=.*/SEAFILE_ADMIN_PASSWORD=$new_password/g" /data/docker-compose.yml'
     volumes: 
       - /opt/seafile-mysql
       - /opt/seafile-data
