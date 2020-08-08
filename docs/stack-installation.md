@@ -15,7 +15,7 @@ If you have completed the Seafile deployment on Cloud Platform, the following st
 1. Using local Chrome or Firefox to visit the URL *http://domain name* or *http://Internet IP*, you will log in interface of Seafile
    ![Seafile login page](http://libs.websoft9.com/Websoft9/DocsPicture/en/seafile/seafile-login-websoft9.png)
 
-2. Input Seafile's username and password[(Get it)](/zh/stack-accounts.md)
+2. Input Seafile's username and password[(Get it)](/stack-accounts.md#seafile)
    ![Seafile后台界面](http://libs.websoft9.com/Websoft9/DocsPicture/en/seafile/seafile-bk-websoft9.png)
 
 3. Set or check your Seafile host URL（**Required, otherwise you cannot use the file upload function**）
