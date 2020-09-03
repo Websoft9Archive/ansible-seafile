@@ -26,3 +26,10 @@
    ```
 
 > 更多邮箱设置（QQ邮箱，阿里云邮箱，Gmail，Hotmail等）以及无法发送邮件等故障之诊断，请参考由Websoft9提供的 [SMTP 专题指南](https://support.websoft9.com/docs/faq/zh/tech-smtp.html)
+
+## FAQ
+
+#### 如何将邮件通知签名 "Seafile 团队" 修改成自己的签名？
+
+Seafile 采用[邮件模板](https://manual-cn-origin.seafile.com/config/customize_email_notifications)进行邮件内容规范化，【Seafile 团队】在邮件模板文件中对应的是【site_name】字段，即网站名称。因此，只需登录到 Seafile 修改网站名称即可。  
+![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-sitename-email-websoft9.png)
