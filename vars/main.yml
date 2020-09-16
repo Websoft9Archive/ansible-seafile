@@ -1,6 +1,9 @@
 region: "0"
 common_os_support: ["CentOS", "Ubuntu", "Amazon"]
 
+docker_applications: 
+  - onlyofficedocumentserver
+  
 init_docker:
   seafile:
     admin_username: me@example.com
