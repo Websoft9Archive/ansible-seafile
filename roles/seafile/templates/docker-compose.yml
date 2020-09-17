@@ -9,8 +9,6 @@ services:
     container_name: seafile-memcached
     restart: always
     entrypoint: memcached -m 256
-    networks:
-      - seafile-net
           
   seafile:
     image: seafileltd/seafile-mc:latest
@@ -22,7 +20,7 @@ services:
     volumes:
       - /opt/seafile-data:/shared
     environment:
-      - DB_HOST=172.17.0.1
+      - DB_HOST={{docker_gateway.stdout}}
       - DB_ROOT_PASSWD={{seafile_mysql_root_password}}
       - TIME_ZONE=Asia/Shanghai
       - SEAFILE_ADMIN_EMAIL={{seafile_admin_email}}
@@ -30,10 +28,7 @@ services:
       - SEAFILE_SERVER_LETSENCRYPT=false
       - SEAFILE_SERVER_HOSTNAME=seafile.example.com
     depends_on:
-      - db
       - memcached
-    networks:
-      - seafile-net
 
 networks:
   default:
