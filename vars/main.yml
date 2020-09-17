@@ -35,7 +35,7 @@ init_docker:
       - 'sudo sed -i "s/DB_ROOT_PASSWD=.*/DB_ROOT_PASSWD=$new_password/g" /data/wwwroot/seafile/docker-compose.yml'
       - 'sudo sed -i "s/SEAFILE_ADMIN_PASSWORD=.*/SEAFILE_ADMIN_PASSWORD=$new_password/g" /data/wwwroot/seafile/docker-compose.yml'
     volumes: 
-      - /opt/seafile-data
+      - /data/wwwroot/seafile/seafile-data
     commands: 
       - sudo sh -c "cat /data/wwwroot/seafile/connect-onlyoffice.conf 1>> /data/wwwroot/seafile/seafile-data/seafile/conf/seahub_settings.py"
       - sudo sed -i "s/seafile.example.com/$(curl ifconfig.me)/g" /data/wwwroot/seafile/seafile-data/seafile/conf/seahub_settings.py
