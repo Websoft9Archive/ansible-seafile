@@ -10,7 +10,7 @@
   file:
     path: /data/wwwroot/seafile
     state: directory
-  recurse: yes
+    recurse: yes
 
 #2 Run Docker compose
 - name: copy docker-compose.yml
