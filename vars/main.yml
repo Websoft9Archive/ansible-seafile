@@ -26,14 +26,14 @@ init_db:
 init_docker:
   seafile:
     service_after: "docker.service mysqld.service"
-    compose_path: "/data/docker-compose.yml"
+    compose_path: "/data/wwwroot/seafile/docker-compose.yml"
     compose_commands:
-      - 'sudo sed -i "s/DB_ROOT_PASSWD=.*/DB_ROOT_PASSWD=$new_password/g" /data/docker-compose.yml'
-      - 'sudo sed -i "s/SEAFILE_ADMIN_PASSWORD=.*/SEAFILE_ADMIN_PASSWORD=$new_password/g" /data/docker-compose.yml'
+      - 'sudo sed -i "s/DB_ROOT_PASSWD=.*/DB_ROOT_PASSWD=$new_password/g" /data/wwwroot/seafile/docker-compose.yml'
+      - 'sudo sed -i "s/SEAFILE_ADMIN_PASSWORD=.*/SEAFILE_ADMIN_PASSWORD=$new_password/g" /data/wwwroot/seafile/docker-compose.yml'
     volumes: 
       - /opt/seafile-data
     commands: 
-      - sudo sh -c "cat /data/config/onlyoffice.conf 1>> /opt/seafile-data/seafile/conf/seahub_settings.py"
-      - sudo sed -i "s/seafile.example.com/$(curl ifconfig.me)/g" /opt/seafile-data/seafile/conf/seahub_settings.py
-      - sudo sed -i "s/seafile.example.com/$(curl ifconfig.me)/g" /opt/seafile-data/seafile/conf/ccnet.conf
+      - sudo sh -c "cat /data/wwwroot/seafile/connect-onlyoffice.conf 1>> /data/wwwroot/seafile/seafile-data/seafile/conf/seahub_settings.py"
+      - sudo sed -i "s/seafile.example.com/$(curl ifconfig.me)/g" /data/wwwroot/seafile/seafile-data/seafile/conf/seahub_settings.py
+      - sudo sed -i "s/seafile.example.com/$(curl ifconfig.me)/g" /data/wwwroot/seafile/seafile-data/seafile/conf/ccnet.conf
       - sudo docker restart seafile
