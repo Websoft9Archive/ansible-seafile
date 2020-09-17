@@ -1,6 +1,5 @@
-# Please don't replace this file directly when Seafile have new version, you should merge it
-# add1 restart: always
-# add2 phpmyadmin
+# edit by seafile's offical file
+# refer to https://docs.seafile.com/d/cb1d3f97106847abbf31/files/?p=/docker/docker-compose.yml
 
 version: '2.0'
 services:
