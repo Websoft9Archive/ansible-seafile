@@ -42,6 +42,7 @@
     state: link
   with_items:
     - {src: /data/wwwroot/seafile/seafile-data,dest: /opt/seafile-data}
+    - {src: /data/wwwroot/seafile/docker-compose.yml,dest: /data/config/seafile_compose.yml}
     
 # check service state
 - name: Check Seafile Service
