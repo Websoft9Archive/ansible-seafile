@@ -14,8 +14,6 @@ mysql_databases:
  
 mysql_users:
  - name: seafile
-   host: %
-   priv: 'seafile.*:ALL'
 
 init_db: 
   mysql:
