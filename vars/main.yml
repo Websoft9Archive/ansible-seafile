@@ -4,23 +4,26 @@ common_os_support: ["CentOS", "Ubuntu", "Amazon"]
 docker_applications: 
   - onlyofficedocumentserver
   - phpmyadmin
-  
+
+mysql_remote: True
+mysql_version: "5.7"       
+mysql_root_password: "123456"
+mysql_databases:
+ - name: seafile_db
+ 
+init_db: 
+  mysql:
+    admin: root
+    password: "123456"
+    
 init_docker:
   seafile:
-    admin_username: me@example.com
-    admin_password: "admin123"
-    db: mysql
-    db_name: seafile_db
-    db_username: root
-    db_password: "123456"
-    service_after: "docker.service"
+    service_after: "docker.service mysqld.service"
     compose_path: "/data/docker-compose.yml"
     compose_commands:
-      - 'sudo sed -i "s/MYSQL_ROOT_PASSWORD=.*/MYSQL_ROOT_PASSWORD=$new_password/g" /data/docker-compose.yml'
       - 'sudo sed -i "s/DB_ROOT_PASSWD=.*/DB_ROOT_PASSWD=$new_password/g" /data/docker-compose.yml'
       - 'sudo sed -i "s/SEAFILE_ADMIN_PASSWORD=.*/SEAFILE_ADMIN_PASSWORD=$new_password/g" /data/docker-compose.yml'
     volumes: 
-      - /opt/seafile-mysql
       - /opt/seafile-data
     commands: 
       - sudo sh -c "cat /data/config/onlyoffice.conf 1>> /opt/seafile-data/seafile/conf/seahub_settings.py"
