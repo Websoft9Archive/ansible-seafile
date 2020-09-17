@@ -3,6 +3,7 @@ common_os_support: ["CentOS", "Ubuntu", "Amazon"]
 
 docker_applications: 
   - onlyofficedocumentserver
+  - phpmyadmin
   
 init_docker:
   seafile:
