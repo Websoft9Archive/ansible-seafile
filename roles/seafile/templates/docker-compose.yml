@@ -4,18 +4,6 @@
 
 version: '2.0'
 services:
-  db:
-    image: mariadb:10.1
-    container_name: seafile-mysql
-    restart: always
-    environment:
-      - MYSQL_ROOT_PASSWORD={{seafile_mysql_root_password}}
-      - MYSQL_LOG_CONSOLE=true
-    volumes:
-      - /opt/seafile-mysql/db:/var/lib/mysql  # Requested, specifies the path to MySQL data persistent store.
-    networks:
-      - seafile-net
-
   memcached:
     image: memcached:1.5.6
     container_name: seafile-memcached
@@ -46,18 +34,8 @@ services:
       - memcached
     networks:
       - seafile-net
-  
-  # add by Websoft9
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin:latest
-    container_name: phpmyadmin
-    restart: always
-    ports:
-      - "9090:80"
-    depends_on:
-      - db
-    networks:
-      - seafile-net
-      
+
 networks:
-  seafile-net:
+  default:
+    external:
+      name: apps
