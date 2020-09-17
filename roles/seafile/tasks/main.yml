@@ -22,12 +22,12 @@
     docker-compose up -d 
     sleep 30s
   args:
-    chdir: /data
+    chdir: /data/wwwroot/seafile
 
 - name: Copy OnlyOffice Document Server connection template
   copy: 
     src: onlyoffice.conf
-    dest: /data/wwwroot/seafile/config
+    dest: /data/wwwroot/seafile/connectonlyoffice.conf
 
 - name: Create ssl directory for user's CA
   file:
