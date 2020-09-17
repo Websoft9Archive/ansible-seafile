@@ -10,7 +10,7 @@ mysql_version: "5.7"
 mysql_root_password: "123456"
 
 mysql_databases:
- - name: seafile
+ - name: seafile_db
  
 mysql_users:
  - name: seafile
