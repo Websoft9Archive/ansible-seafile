@@ -27,7 +27,7 @@
 - name: Copy OnlyOffice Document Server connection template
   copy: 
     src: onlyoffice.conf
-    dest: /data/wwwroot/seafile/connectonlyoffice.conf
+    dest: /data/wwwroot/seafile/connect-onlyoffice.conf
 
 - name: Create ssl directory for user's CA
   file:
