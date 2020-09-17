@@ -22,7 +22,7 @@ services:
     volumes:
       - /opt/seafile-data:/shared
     environment:
-      - DB_HOST=db
+      - DB_HOST=172.17.0.1
       - DB_ROOT_PASSWD={{seafile_mysql_root_password}}
       - TIME_ZONE=Asia/Shanghai
       - SEAFILE_ADMIN_EMAIL={{seafile_admin_email}}
