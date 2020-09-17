@@ -18,7 +18,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - /opt/seafile-data:/shared
+      - /data/wwwroot/seafile/seafile-data:/shared
     environment:
       - DB_HOST={{docker_gateway.stdout}}
       - DB_ROOT_PASSWD={{seafile_mysql_root_password}}
