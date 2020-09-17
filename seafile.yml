@@ -13,7 +13,7 @@
     - {role: role_cloud, tags: "role_cloud"}
     - {role: role_mysql, tags: "role_mysql"}
     - {role: role_docker, tags: "role_docker"}
- #   - {role: seafile, tags: "seafile"}
-    - {role: role_init, tags: "role_init"}
+    - {role: seafile, tags: "seafile"}
+  #  - {role: role_init, tags: "role_init"}
     - {role: role_preend, tags: "role_preend"}
     - {role: role_end, tags: "role_end"}
