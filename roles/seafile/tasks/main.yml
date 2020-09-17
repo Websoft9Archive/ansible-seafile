@@ -1,13 +1,17 @@
 #1 install Seafile by OS_family
 - name: Install this role on {{ansible_os_family}}
   include: "{{ansible_os_family}}.yml"
- 
+
+- name: Get Docker Gateway
+  shell: ip route show | grep docker0 | awk '{print $9}'
+  register: docker_gateway
+  
 #2 Run Docker compose
 - name: copy docker-compose.yml
   template:
     src: docker-compose.yml
     dest: /data/docker-compose.yml
-
+  
 - name: run docker-compose
   shell: |
     docker-compose up -d 
