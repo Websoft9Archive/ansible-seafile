@@ -37,7 +37,7 @@
 #3 UX Settings    
 - name: Create soft link
   shell: |
-    ln -sf /opt/seafile-data  /data/wwwroot
+    ln -sf /data/wwwroot/seafile/seafile-data  /opt/seafile-data
 
     
 # check service state
