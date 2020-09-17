@@ -23,6 +23,12 @@ init_db:
     
 init_docker:
   seafile:
+    admin_username: me@example.com
+    admin_password: "admin123"
+    db: mysql
+    db_name: seafile_db
+    db_username: root
+    db_password: "123456"
     service_after: "docker.service mysqld.service"
     compose_path: "/data/wwwroot/seafile/docker-compose.yml"
     compose_commands:
