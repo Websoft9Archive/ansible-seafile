@@ -10,6 +10,7 @@
   file:
     path: /data/wwwroot/seafile
     state: directory
+  rescure: ture
 
 #2 Run Docker compose
 - name: copy docker-compose.yml
