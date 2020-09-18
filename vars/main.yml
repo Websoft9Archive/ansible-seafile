@@ -11,14 +11,10 @@ mysql_root_password: "123456"
 
 mysql_databases:
  - name: seafile_db
- 
-mysql_users:
- - name: seafile
 
 init_db: 
   mysql:
     admin: root
-    users: ["seafile"]
     password: "123456"
     
 init_docker:
