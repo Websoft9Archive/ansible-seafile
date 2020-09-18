@@ -30,6 +30,10 @@ init_docker:
     compose_commands:
       - 'sudo sed -i "s/DB_ROOT_PASSWD=.*/DB_ROOT_PASSWD=$new_password/g" /data/wwwroot/seafile/docker-compose.yml'
       - 'sudo sed -i "s/SEAFILE_ADMIN_PASSWORD=.*/SEAFILE_ADMIN_PASSWORD=$new_password/g" /data/wwwroot/seafile/docker-compose.yml'
+      - sudo mysql -u root -p$new_password -e "drop user seafile"
+      - sudo mysql -u root -p$new_password -e "DROP DATABASE ccnet_db"
+      - sudo mysql -u root -p$new_password -e "DROP DATABASE seafile_db"
+      - sudo mysql -u root -p$new_password -e "DROP DATABASE seahub_db"
     volumes: 
       - /data/wwwroot/seafile/seafile-data
     commands: 
