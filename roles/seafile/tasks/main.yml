@@ -17,6 +17,13 @@
   template:
     src: docker-compose.yml
     dest: /data/wwwroot/seafile/docker-compose.yml
+  when: == ""
+
+- name: copy docker-compose.yml
+  template:
+    src: docker-compose.yml
+    dest: /data/wwwroot/seafile/docker-compose.yml
+  when: == ""
   
 - name: run docker-compose
   shell: |
