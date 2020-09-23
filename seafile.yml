@@ -8,6 +8,21 @@
   vars_files:
     - vars/main.yml
 
+  vars_prompt:
+    - name: 'seafile_selection'
+      prompt: "\nSeafile Community or seafile Enterprise? [ 1/2 ] \n\n
+      1: Seafile Community\n
+      2: Seafile Enterprise\n"
+      private: no
+      default: 1
+
+  vars:
+    seafile_select:
+      '1': 'community'
+      '2': 'enterprise'
+
+  seafile_distribution: "{{seafile_select[seafile_selection]}}"
+    
   roles:
     - {role: role_common, tags: "role_common"}
     - {role: role_cloud, tags: "role_cloud"}
