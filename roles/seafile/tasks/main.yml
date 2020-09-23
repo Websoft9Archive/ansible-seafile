@@ -17,13 +17,13 @@
   template:
     src: docker-compose.yml
     dest: /data/wwwroot/seafile/docker-compose.yml
-  when: == ""
+  when: seafile_distribution == "community"
 
 - name: copy docker-compose.yml
   template:
-    src: docker-compose.yml
+    src: docker-compose-enterprise.yml
     dest: /data/wwwroot/seafile/docker-compose.yml
-  when: == ""
+  when: seafile_distribution == "enterprise"
   
 - name: run docker-compose
   shell: |
