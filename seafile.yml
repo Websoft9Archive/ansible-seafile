@@ -21,7 +21,7 @@
       '1': 'community'
       '2': 'enterprise'
 
-  seafile_distribution: "{{seafile_select[seafile_selection]}}"
+    seafile_distribution: "{{seafile_select[seafile_selection]}}"
     
   roles:
     - {role: role_common, tags: "role_common"}
