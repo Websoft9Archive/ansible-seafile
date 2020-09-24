@@ -1,6 +1,6 @@
 # edit by seafile's offical file
 # refer to https://docs.seafile.com/d/cb1d3f97106847abbf31/files/?p=/docker/docker-compose.yml
-{% if seafile_distribution == "communicate" %}
+{% if seafile_distribution == "community" %}
 version: '2.0'
 services:
   memcached:
