@@ -1,6 +1,6 @@
 # edit by seafile's offical file
 # refer to https://docs.seafile.com/d/cb1d3f97106847abbf31/files/?p=/docker/docker-compose.yml
-{% if ansible_os_family  == 'Debian' %}
+{% if seafile_distribution == "communicate" %}
 version: '2.0'
 services:
   memcached:
@@ -29,7 +29,7 @@ services:
     depends_on:
       - memcached
 {% endif %}
-{% if ansible_os_family  == 'Debian' %}
+{% if seafile_distribution == "enterprise" %}
 version: '2.0'
 services:
   memcached:
