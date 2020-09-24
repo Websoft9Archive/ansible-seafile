@@ -1,3 +1,4 @@
 seafile_mysql_root_password: "123456"
 seafile_admin_email: me@example.com
 seafile_admin_password: admin123
+seafile_distribution: 
