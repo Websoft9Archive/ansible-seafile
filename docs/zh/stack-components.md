@@ -43,7 +43,7 @@ ONLYOFFICE Document Server存储目录： */data/apps/onlyofficedocumentserver*
 ONLYOFFICE docker-compose 文件路径： */data/apps/onlyofficedocumentserver/docker-compose.yml*  
 ONLYOFFICE 日志目录： */data/apps/onlyofficedocumentserver/logs*
 
-### MySQL
+#### MySQL
 
 MySQL 安装路径: */usr/local/mysql*  
 MySQL 数据文件 */data/mysql*  
@@ -51,7 +51,7 @@ MySQL 配置文件: */etc/my.cnf*
 
 MySQL 可视化管理参考 [MySQL 管理](/zh/admin-mysql.md) 章节。
 
-###  phpMyAdmin
+####  phpMyAdmin
 
 phpMyAdmin 是一款可视化 MySQL 管理工具，在本项目中它基于 Docker 安装。  
 

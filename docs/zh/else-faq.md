@@ -4,6 +4,11 @@
 
 支持多种语言（中文，英文等）
 
+#### 为什么要推荐使用企业版Seafile？
+
+企业版用户拥有很多社区版没有的功能，如下：
+![Seafile企业版社区版功能对比](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-compare-websoft9.png)
+
 #### 为什么采用 Docker 方式部署 Seafile？
 
 官方推荐
