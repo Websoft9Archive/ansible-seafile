@@ -40,5 +40,5 @@ init_docker:
       - sudo sleep 30s
       - sudo sh -c "cat /data/wwwroot/seafile/connect-onlyoffice.conf 1>> /data/wwwroot/seafile/seafile-data/seafile/conf/seahub_settings.py"
       - sudo sed -i "s/seafile.example.com/$(curl ifconfig.me)/g" /data/wwwroot/seafile/seafile-data/seafile/conf/seahub_settings.py
-      - sudo sed -i "s/seafile.example.com/$(curl ifconfig.me)/g" /data/wwwroot/seafile/seafile-data/seafile/conf/ccnet.conf
+      - sudo sed -i "s/seafile.example.com:8000/$(curl ifconfig.me)/g" /data/wwwroot/seafile/seafile-data/seafile/conf/ccnet.conf
       - sudo docker restart seafile
