@@ -30,6 +30,15 @@
 
 > 需要了解更多Seafile的使用，请参考：[《Seafile 用户手册》](https://help.seafile.com/zh/) 和 [《Seafile 服务器手册》](http://manual-cn.seafile.com/)
 
+5. 安装授权文件(仅支持seafile企业版)
+
+   如果您已经向 Seafile 软件商购买了专业版的授权文件seafile-license.txt，您只需要将该授权文件拷贝至 Seafile 数据持久化目录中的/data/wwwroot/seafile/seafile-data/seafile/目录下，然后重启docker容器，即可完成授权文件的安装。
+   
+```bash
+cp seafile-license.txt /data/wwwroot/seafile/seafile-data/seafile/
+docker restart seafile
+```
+
 ## 常见问题
 
 #### 浏览器打开IP地址，无法访问 Seafile（白屏没有结果）？

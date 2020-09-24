@@ -9,7 +9,7 @@ CONTAINER ID        IMAGE                              COMMAND                  
 958e4cbc8dbe        seafileltd/seafile-mc:latest       "/sbin/my_init -- /s…"   14 hours ago        Up 9 minutes        0.0.0.0:80->80/tcp, 0.0.0.0:443->443/tcp      seafile
 80c266262079        phpmyadmin/phpmyadmin:latest       "/docker-entrypoint.…"   14 hours ago        Up 9 minutes        0.0.0.0:9090->80/tcp                          phpmyadmin
 cea7ee7b8f2a        memcached:1.5.6                    "memcached -m 256"       14 hours ago        Up 9 minutes        11211/tcp                                     seafile-memcached
-43881d791ed6        mariadb:10.1                       "docker-entrypoint.s…"   14 hours ago        Up 9 minutes        3306/tcp                                      seafile-mysql
+43881d791ed6        seafileltd/elasticsearch:5.6.16    "/docker-entrypoint.…"   14 hours ago        Up 9 minutes        3306/tcp                                      seafile-elasticsearch
 a4498231bb29        onlyoffice/documentserver:latest   "/bin/sh -c /app/ds/…"   39 hours ago        Up 9 minutes        0.0.0.0:9002->80/tcp, 0.0.0.0:9003->443/tcp   onlyoffice-documentserver
 ```
 
@@ -17,43 +17,47 @@ a4498231bb29        onlyoffice/documentserver:latest   "/bin/sh -c /app/ds/…" 
 
 下面主要列出Docker有关的参数：
 
-### Docker Compose
-
-本环境使用 Docker Compose 作为容器编排（调度）工具，用于管理多个容器配置、启动和服务连接。
-
-Docker Compose 配置文件 */data/docker-compose.yml*  
-Docker Compose 命令位置：*/usr/local/bin/docker-compose*  
-
 ### Seafile
 
-Seafile 配置目录： */data/wwwroot/seafile-data/seafile/conf*  
-Seafile 主目录：*/data/wwwroot/seafile-data*  
-Seafile 日志目录：*/data/wwwroot/seafile-data/logs*  
+本项目中的 Seafile 是由：seafile、seafile-memcached和seafile-elasticsearch(企业版专有)组成，它们均基于 Docker 安装，并完成了集成。 
 
-> Seafile配置文件包括 seahub_settings.py, seafile.conf等  
+#### Seafile
 
-### MariaDB/MySQL
+Seafile 存储目录： */data/wwwroot/seafile/seafile-data*  
+Seafile docker-compose 文件路径： */data/wwwroot/seafile/docker-compose.yml*  
+Seafile 日志目录： */data/wwwroot/seafile/seafile-data/logs*
 
-MariaDB 数据持久存储：*/data/seafile-mysql*  
+seafile-memcached 存储目录： */data/wwwroot/seafile/seafile-data*  
+seafile-memcached docker-compose 文件路径： */data/wwwroot/seafile/docker-compose.yml*  
+seafile-memcached 日志目录： */data/wwwroot/seafile/seafile-data/logs*
 
-### phpMyAdmin
+seafile-elasticsearch 存储目录： */data/wwwroot/seafile/seafile-elasticsearch*  
+seafile-elasticsearch docker-compose 文件路径： */data/wwwroot/seafile/docker-compose.yml*  
+seafile-elasticsearch 日志目录： */data/wwwroot/seafile/seafile-data/logs*
 
-基于 Docker 运行的 MariaDB 可视化管理工具，访问地址：*http://服务器公网IP:9090*
+> Seafile配置文件包括 seahub_settings.py, seafile.conf等
 
-### OnlyOffice Document Server
+#### ONLYOFFICE Document Server
 
-OnlyOffice Document Server 证书持久存储：*/data/certs/onlyoffice_DocumentServer*  
-OnlyOffice Document Server 日志持久存储：*/data/logs/onlyoffice_DocumentServer*  
-OnlyOffice Document Server 数据持久存储：*/data/wwwroot/onlyoffice_DocumentServer/data*  
-OnlyOffice Document Server 配置持久存储：*/data/wwwroot/onlyoffice_DocumentServer/lib*  
-OnlyOffice Document Server 数据库持久存储：*data/onlyoffice_DocumentServer_postgresql*  
+ONLYOFFICE Document Server存储目录： */data/apps/onlyofficedocumentserver*  
+ONLYOFFICE docker-compose 文件路径： */data/apps/onlyofficedocumentserver/docker-compose.yml*  
+ONLYOFFICE 日志目录： */data/apps/onlyofficedocumentserver/logs*
 
-### Docker
+### MySQL
 
-Docker 根目录: */var/lib/docker*  
-Docker 镜像目录: */var/lib/docker/image*   
-Docker 存储卷：*/var/lib/docker/volumes*  
-Docker daemon.json 文件：默认没有创建，请到 */etc/docker* 目录下根据需要自行创建
+MySQL 安装路径: */usr/local/mysql*  
+MySQL 数据文件 */data/mysql*  
+MySQL 配置文件: */etc/my.cnf*  
+
+MySQL 可视化管理参考 [MySQL 管理](/zh/admin-mysql.md) 章节。
+
+###  phpMyAdmin
+
+phpMyAdmin 是一款可视化 MySQL 管理工具，在本项目中它基于 Docker 安装。  
+
+phpMyAdmin directory：*/data/apps/phpmyadmin*  
+phpMyAdmin docker compose file：*/data/apps/phpmyadmin/docker-compose.yml* 
+
 
 ## 端口号
 
