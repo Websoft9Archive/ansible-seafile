@@ -30,6 +30,48 @@ services:
       - memcached
 {% endif %}
 {% if ansible_os_family  == 'Debian' %}
+version: '2.0'
+services:
+  memcached:
+    image: memcached:1.5.6
+    container_name: seafile-memcached
+    restart: always
+    entrypoint: memcached -m 256
+    
+  elasticsearch:
+    image: seafileltd/elasticsearch-with-ik:5.6.16
+    container_name: seafile-elasticsearch
+    environment:
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    mem_limit: 2g
+    volumes:
+      - /data/wwwroot/seafile/seafile-elasticsearch/data:/usr/share/elasticsearch/data  # Requested, specifies the path to Elasticsearch data persistent store.
+      
+  seafile:
+    image: docker.seafile.top/seafileltd/seafile-pro-mc:latest
+    container_name: seafile
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /data/wwwroot/seafile/seafile-data:/shared
+    environment:
+      - DB_HOST={{docker_gateway.stdout}}
+      - DB_ROOT_PASSWD={{seafile_mysql_root_password}}
+      - TIME_ZONE=Asia/Shanghai
+      - SEAFILE_ADMIN_EMAIL={{seafile_admin_email}}
+      - SEAFILE_ADMIN_PASSWORD={{seafile_admin_password}}
+      - SEAFILE_SERVER_LETSENCRYPT=false
+      - SEAFILE_SERVER_HOSTNAME=seafile.example.com
+    depends_on:
+      - memcached
 {% endif %}
 networks:
   default:
