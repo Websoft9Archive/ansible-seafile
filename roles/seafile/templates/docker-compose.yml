@@ -57,8 +57,7 @@ services:
     container_name: seafile
     restart: always
     ports:
-      - "80:80"
-      - "443:443"
+      - "9100:80"
     volumes:
       - /data/wwwroot/seafile/seafile-data:/shared
     environment:
