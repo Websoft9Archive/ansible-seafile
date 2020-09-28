@@ -19,5 +19,5 @@
 - src: https://github.com/websoft9dev/role_end
   version: master
   
- - src: https://github.com/websoft9dev/role_nginx
+- src: https://github.com/websoft9dev/role_nginx
   version: master
