@@ -8,7 +8,7 @@
 2. 在云控制台安全组中，检查 **Inbound（入）规则** 下的 **TCP:80** 和 **TCP:9002** 端口是否开启
 3. 若想用域名访问 Seafile，请先到 **域名控制台** 完成一个域名解析
 
-> 9003 是用于文档预览和编辑的 OnlyOffice Document Server 服务所需的端口
+> 9002 是用于文档预览和编辑的 OnlyOffice Document Server 服务所需的端口
 
 ## Seafile 安装向导
 
