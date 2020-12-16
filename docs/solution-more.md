@@ -28,6 +28,7 @@ Seafile domain name binding steps:
 ## Docker-compose 配置文件
 
 You can reset [Docker-compose file](/stack-components.md#docker-compose) for more settings, includes:
+> Completed the modification of compose file, run the command `sudo cd /data && docker-compose up -d` for take effect.
 
 ## Manage Seafile Password
 
@@ -56,5 +57,3 @@ If the server does not support the function of sending email passwords, the data
 2. Replace the data with `PBKDF2SHA256$10000$7289a20ae4fc2329415b0645fa3d106019cc61952ae1bc2f9eeef7b30dc47d88$5418ac28f06bd84f2bb701a10dbea6b0bd30676c8042e1f73b9ce12aac302a8d`(MD5)
 3. Click **run**
 4. The new password is `123456` now
-
-> Completed the modification of compose file, run the command `sudo cd /data && docker-compose up -d` for take effect.
