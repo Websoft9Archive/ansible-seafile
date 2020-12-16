@@ -29,21 +29,32 @@ Seafile domain name binding steps:
 
 You can reset [Docker-compose file](/stack-components.md#docker-compose) for more settings, includes:
 
-### Reset Seafile administrator password
+## Manage Seafile Password
 
-If you have forgotten the Seafile administrator password, modify the item below:
+We may **Modify** or **recover** Seafile administrator password
 
-```text
-- SEAFILE_ADMIN_PASSWORD=KkK303Ye4LmkC4h
-```
+### Modify Seafile administrator password
 
-### MariaDB/MySQL 连接配置
+Log in Seafile, go to Users->Your Profile,update your password
+![Seafile Modify Seafile administrator password](https://libs.websoft9.com/Websoft9/DocsPicture/en/seafile/seafile-modifypw-websoft9.png)
 
-If you have modify the MariaDB/MySQL root password, Seafile will not running normally. You should modify the items below:
+### Recover Seafile administrator password
 
-```text
-- MYSQL_ROOT_PASSWORD=KkK303Ye4LmkC4h
-- DB_ROOT_PASSWD=KkK303Ye4LmkC4h
-```
+If you don't remember the Seafile administrator password, you can retrieve it in the following two ways.
+
+#### Recover by Email
+
+Seafile can retrieve the password by sending an email, but only if your Seafile site has already configured SMTP.
+![Seafile Modify Seafile administrator password](https://libs.websoft9.com/Websoft9/DocsPicture/en/seafile/seafile-forgetpw-websoft9.png)
+
+#### Recover by database
+
+If the server does not support the function of sending email passwords, the database management panel phpmyadmin will modify it.
+
+1. Log in to phpMyAdmin, find the *EmailUser* table of your Seafile database,Edit the user(e.g. your username is `me@example.com`)  
+   ![Seafile database](https://libs.websoft9.com/Websoft9/DocsPicture/en/seafile/seafile-userspw-websoft9.png)
+2. Replace the data with `PBKDF2SHA256$10000$7289a20ae4fc2329415b0645fa3d106019cc61952ae1bc2f9eeef7b30dc47d88$5418ac28f06bd84f2bb701a10dbea6b0bd30676c8042e1f73b9ce12aac302a8d`(MD5)
+3. Click **run**
+4. The new password is `123456` now
 
 > Completed the modification of compose file, run the command `sudo cd /data && docker-compose up -d` for take effect.
