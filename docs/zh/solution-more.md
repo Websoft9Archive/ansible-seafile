@@ -22,6 +22,7 @@ Seafile 域名绑定操作步骤：
 ## Docker-compose 配置文件
 
 使用 SFTP 登录云服务器，修改 [Docker-compose 配置文件](/zh/stack-components.md#docker-compose)，可以完成常见的维护工作：
+> 修改 Docker-compose 配置文件后，运行命令 `sudo cd /data && docker-compose up -d` 后生效
 
 ## 管理员密码
 
@@ -54,4 +55,4 @@ Seafile可以通过发送邮件找回密码，但前提条件是您的 Seafile �
 3. 点击【执行】
 4. 新的密码为`123456`
 
-> 修改 Docker-compose 配置文件后，运行命令 `sudo cd /data && docker-compose up -d` 后生效
+
