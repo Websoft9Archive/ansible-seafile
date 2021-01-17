@@ -22,14 +22,23 @@ yum update -y
 > 本部署包已预配置一个用于自动更新的计划任务。如果希望去掉自动更新，请删除对应的Cron
 
 
-## Seafile升级
+## Seafile 升级
 
-1. 检查 /data/docker-compose.yml 文件是否满足最新版本要求
-2. 重新运行 docker-compose 编排文件
+Seafile 升级原理非常简单：先拉取最新版本的 Seafile 镜像，然后重新运行容器。
+
+> Seafile 升级之前请完成服务器的快照备份，以防不测。
+
+1. 使用 SSH 登录 Seafile 服务器后，拉取最新版本镜像
+   ```
+   docker image pull seafileltd/seafile-mc:latest
+   ```
+2. 重新运行 docker-compose 编排文件，启用新的容器
     ```
-    cd /data 
+    cd /data/wwwroot/seafile 
     docker-compose down -v
     docker-compose up -d
     ```
+3. 登录 Seafile 后台查看升级后的版本
+   ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-aboutversion-websoft9.png)
 
-更多参考官方升级文档：[升级 Seafile 服务](https://manual-cn-origin.seafile.com/deploy/deploy_with_docker#sheng-ji-seafile-fu-wu)
+更多参考官方升级文档：[升级 Seafile 服务](https://cloud.seafile.com/published/seafile-manual-cn/docker/%E7%94%A8Docker%E9%83%A8%E7%BD%B2Seafile.md#user-content-%E5%8D%87%E7%BA%A7%20Seafile%20%E6%9C%8D%E5%8A%A1)

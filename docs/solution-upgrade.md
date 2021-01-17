@@ -28,8 +28,15 @@ yum update -y
 
 Modify the version information in the file: */data/docker-compose.yml*, run the command below
 
-```
-sudo cd /data && docker-compose up -d
-```
+1. Use **SSH** to connect Seafile Server and pull the latest image of Seafile
+   ```
+   docker image pull seafileltd/seafile-mc:latest
+   ```
 
-More details please refer to official docs [Seafile upgrade](https://download.seafile.com/published/seafile-manual/deploy/deploy_with_docker.md)
+2. Create new Seafile container by *docker-compose.yml*
+    cd /data/wwwroot/seafile 
+    docker-compose down -v
+    docker-compose up -d
+    ```
+
+More details please refer to official docs [Seafile upgrade](https://manual.seafile.com/docker/deploy%20seafile%20with%20docker/#upgrading-seafile-server)
