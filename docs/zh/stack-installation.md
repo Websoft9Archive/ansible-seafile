@@ -43,7 +43,7 @@ docker restart seafile
 Seafile 是一款开源的企业云盘，作为企业云盘，主要用于网络存储和管理文件，以及文件共享和协同办公。在使用 Seafile 时，有如下常规操作：
 
 - 用户和分组管理，用于用户管理，和成员分组统一管理
-- 文件和文件库管理，用于文件的管理和分类，并通过查看文件的历史信息了解文件的
+- 文件和文件库管理，用于文件的管理和分类，并通过查看文件的历史信息了解文件的版本变更
 - 共享与写作，用于将文件或文件库共享给个人或群组，实现协同办公
 
 ### 步骤
@@ -53,8 +53,8 @@ Seafile 是一款开源的企业云盘，作为企业云盘，主要用于网络
    
 2. 添加资料库 Websoft9op,并在资料库中添加文件a.docx，并编辑该文件
    ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-addlib-websoft9.png)
-   ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-addfile-websoft9.png)
-   ![Seafile登录页面](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-editfile1-websoft9.png)
+   ![添加文件](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-addfile-websoft9.png)
+   ![编辑文件](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-editfile1-websoft9.png)
 
 3. 进入系统管理，添加用户，添加分组，同时对用户进行分组。seafile也支持批量导入用户
    ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-system-websoft9.png)
