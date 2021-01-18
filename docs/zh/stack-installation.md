@@ -28,7 +28,7 @@
 
 4. 开始使用 Seafile 全面友好的功能吧
 
-> 需要了解更多Seafile的使用，请参考：[《Seafile 用户手册》](https://help.seafile.com/zh/) 和 [《Seafile 服务器手册》](http://manual-cn.seafile.com/)
+> 需要了解更多Seafile的使用，请参考：[《Seafile 用户手册》](https://cloud.seafile.com/published/seafile-user-manual/home.md) 和 [《Seafile 服务器手册》](https://cloud.seafile.com/published/seafile-manual-cn/home.md)
 
 5. 安装授权文件(仅支持seafile企业版)
 
