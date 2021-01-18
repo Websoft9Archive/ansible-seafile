@@ -57,25 +57,25 @@ Seafile 是一款开源的企业云盘，作为企业云盘，主要用于网络
    ![编辑文件](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-editfile1-websoft9.png)
 
 3. 进入系统管理，添加用户，添加分组，同时对用户进行分组。seafile也支持批量导入用户
-   ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-system-websoft9.png)
-   ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-adduser-websoft9.png)
-   ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-addgroup-websoft9.png)
-   ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-addusertogroup-websoft9.png)
+   ![进入系统管理](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-system-websoft9.png)
+   ![添加用户](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-adduser-websoft9.png)
+   ![添加分组](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-addgroup-websoft9.png)
+   ![用户分组](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-addusertogroup-websoft9.png)
 
 4. 将资料库共享给指定用户，并设定【读写权限】。注：在选择用户时，需输入用户名，系统自动查找匹配
-   ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-sharefile1-websoft9.png)
-   ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-sharefile-websoft9.png)
+   ![文件共享](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-sharefile1-websoft9.png)
+   ![文件共享](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-sharefile-websoft9.png)
 
 5. 切换user1用户登录，使用邮箱地址【user1@websfot9】作为登录名
    ![Seafile登录页面](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-login1-websoft9.png)
 
 6. 查看共享文件，进入OnlyOffice进行编辑，保存文档
-   ![Seafile登录页面](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-viewsharefile-websoft9.png)
-   ![Seafile登录页面](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-editfile-websoft9.png)
+   ![查看共享文件](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-viewsharefile-websoft9.png)
+   ![编辑共享文件](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-editfile-websoft9.png)
 
 7. 切换 me@example.com 登录系统，进入资料库，查看共享文件的版本变更信息
-   ![Seafile登录页面](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-viewfileinfo1-websoft9.png)
-   ![Seafile登录页面](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-viewfileinfo-websoft9.png)
+   ![查看共享文件版本信息](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-viewfileinfo1-websoft9.png)
+   ![查看共享文件版本信息](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-viewfileinfo-websoft9.png)
 
 
 
