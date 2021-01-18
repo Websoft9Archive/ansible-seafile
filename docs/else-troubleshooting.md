@@ -21,4 +21,4 @@ You should set the your correct Seafile host after deployment, otherwise you can
    - SERVICE_URL：*http://Internet IP of Server*
    - FILE_SERVER_ROOT：*http:/Internet IP of Server/seafhttp*
    
-   ![Seafile Host settings](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-seturl-websoft9.png)
+   ![Seafile Host settings](https://libs.websoft9.com/Websoft9/DocsPicture/en/seafile/seafile-seturl-websoft9.png)

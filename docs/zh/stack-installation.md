@@ -38,7 +38,7 @@
 cp seafile-license.txt /data/wwwroot/seafile/seafile-data/seafile/
 docker restart seafile
 ```
-## 入门向导
+## Seafile 入门向导
 
 Seafile 是一款开源的企业云盘，作为企业云盘，主要用于网络存储和管理文件，以及文件共享和协同办公。在使用 Seafile 时，有如下常规操作：
 
@@ -46,37 +46,67 @@ Seafile 是一款开源的企业云盘，作为企业云盘，主要用于网络
 - 文件和文件库管理，用于文件的管理和分类，并通过查看文件的历史信息了解文件的版本变更
 - 共享与写作，用于将文件或文件库共享给个人或群组，实现协同办公
 
-### 步骤
+下面我们通过创建资料库、创建文件、编辑文件、设置权限、用户共享等操作，来熟悉 Seafile 的使用。
 
-1. 账号登录 Seafile
-   ![Seafile登录页面](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-login-websoft9.png)
-   
-2. 添加资料库 Websoft9op,并在资料库中添加文件a.docx，并编辑该文件
-   ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-addlib-websoft9.png)
-   ![添加文件](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-addfile-websoft9.png)
-   ![编辑文件](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-editfile1-websoft9.png)
+### 添加文件
 
-3. 进入系统管理，添加用户，添加分组，同时对用户进行分组。seafile也支持批量导入用户
-   ![进入系统管理](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-system-websoft9.png)
-   ![添加用户](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-adduser-websoft9.png)
-   ![添加分组](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-addgroup-websoft9.png)
-   ![用户分组](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-addusertogroup-websoft9.png)
+下面我们介绍如何添加和编辑文件：
 
-4. 将资料库共享给指定用户，并设定【读写权限】。注：在选择用户时，需输入用户名，系统自动查找匹配
-   ![文件共享](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-sharefile1-websoft9.png)
-   ![文件共享](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-sharefile-websoft9.png)
+1. 登录到 Seafile 后，添加资料库，然后添加文件
 
-5. 切换user1用户登录，使用邮箱地址【user1@websfot9】作为登录名
-   ![Seafile登录页面](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-login1-websoft9.png)
+   ![Seafile添加资料库](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-addlib-websoft9.png)
 
-6. 查看共享文件，进入OnlyOffice进行编辑，保存文档
-   ![查看共享文件](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-viewsharefile-websoft9.png)
-   ![编辑共享文件](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-editfile-websoft9.png)
+   ![Seafile添加文件](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-addfile-websoft9.png)
 
-7. 切换 me@example.com 登录系统，进入资料库，查看共享文件的版本变更信息
-   ![查看共享文件版本信息](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-viewfileinfo1-websoft9.png)
-   ![查看共享文件版本信息](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-viewfileinfo-websoft9.png)
+2. 在线编辑文件（通过内置的 OnlyOffice Document Server 服务实现）
 
+   ![Seafile编辑文件](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-editfile1-websoft9.png)
+
+### 用户管理
+
+下面我们介绍如何创建用户和群组：
+
+1. 打开右上角用户图标，进入【系统管理】，分别添加【用户】和【群组】
+
+   ![Seafile进入系统管理](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-system-websoft9.png)
+
+   ![Seafile添加用户](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-adduser-websoft9.png)
+
+   ![Seafile添加群组](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-addgroup-websoft9.png)
+
+2. 设置所创建的用户所归属群组
+
+   ![Seafile用户分组](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-addusertogroup-websoft9.png)
+
+### 文件共享
+
+下面我们介绍如何给另外一个用户共享自己的文件：
+
+1. 进入【我的资料库】，将资料库共享给指定用户，
+
+   ![Seafile文件共享](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-sharefile1-websoft9.png)
+
+
+2. 设定权限为【可写】或【只读】
+
+   ![Seafile文件共享](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-sharefile-websoft9.png)
+
+   > 在选择用户时，需输入用户名，系统自动查找匹配
+
+### 读写共享文件
+
+下面我们演示用户如何读写其他人共享过来的文件：
+
+1. 切换user1用户登录，使用邮箱地址【user1@websoft9】作为登录名
+   ![Seafile登录页面](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-login1-websoft9.png)
+
+2. 查看共享文件，进入 OnlyOffice 进行编辑，保存文档
+   ![Seafile查看共享文件](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-viewsharefile-websoft9.png)
+   ![Seafile编辑共享文件](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-editfile-websoft9.png)
+
+3. 切换到管理员账号 `me@example.com`，查看共享文件的版本变更信息
+   ![查看共享文件版本信息](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-viewfileinfo1-websoft9.png)
+   ![查看共享文件版本信息](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-viewfileinfo-websoft9.png)
 
 
 ## 常见问题
