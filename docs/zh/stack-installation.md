@@ -48,16 +48,18 @@ Seafile 是一款开源的企业云盘，作为企业云盘，主要用于网络
 
 ### 步骤
 
-1. 用 me@example.com 账号登录 Seafile，进入后台系统
+1. 账号登录 Seafile
    ![Seafile登录页面](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-login-websoft9.png)
    
 2. 添加资料库 Websoft9op,并在资料库中添加文件a.docx，并编辑该文件
    ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-addlib-websoft9.png)
    ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-addfile-websoft9.png)
+   ![Seafile登录页面](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-editfile1-websoft9.png)
 
 3. 进入系统管理，添加用户，添加分组，同时对用户进行分组。seafile也支持批量导入用户
    ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-system-websoft9.png)
    ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-adduser-websoft9.png)
+   ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-addgroup-websoft9.png)
    ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-addusertogroup-websoft9.png)
 
 4. 将资料库共享给指定用户，并设定【读写权限】。注：在选择用户时，需输入用户名，系统自动查找匹配
