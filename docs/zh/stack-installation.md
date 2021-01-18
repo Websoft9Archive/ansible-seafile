@@ -38,6 +38,44 @@
 cp seafile-license.txt /data/wwwroot/seafile/seafile-data/seafile/
 docker restart seafile
 ```
+## 入门向导
+
+Seafile 是一款开源的企业云盘，作为企业云盘，主要用于网络存储和管理文件，以及文件共享和协同办公。在使用 Seafile 时，有如下常规操作：
+
+- 用户和分组管理，用于用户管理，和成员分组统一管理
+- 文件和文件库管理，用于文件的管理和分类，并通过查看文件的历史信息了解文件的
+- 共享与写作，用于将文件或文件库共享给个人或群组，实现协同办公
+
+### 步骤
+
+1. 用 me@example.com 账号登录 Seafile，进入后台系统
+   ![Seafile登录页面](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-login-websoft9.png)
+   
+2. 添加资料库 Websoft9op,并在资料库中添加文件a.docx，并编辑该文件
+   ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-addlib-websoft9.png)
+   ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-addfile-websoft9.png)
+
+3. 进入系统管理，添加用户，添加分组，同时对用户进行分组。seafile也支持批量导入用户
+   ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-system-websoft9.png)
+   ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-adduser-websoft9.png)
+   ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-addusertogroup-websoft9.png)
+
+4. 将资料库共享给指定用户，并设定【读写权限】。注：在选择用户时，需输入用户名，系统自动查找匹配
+   ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-sharefile1-websoft9.png)
+   ![添加资料库](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-sharefile-websoft9.png)
+
+5. 切换user1用户登录，使用邮箱地址【user1@websfot9】作为登录名
+   ![Seafile登录页面](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-login1-websoft9.png)
+
+6. 查看共享文件，进入OnlyOffice进行编辑，保存文档
+   ![Seafile登录页面](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-viewsharefile-websoft9.png)
+   ![Seafile登录页面](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-editfile-websoft9.png)
+
+7. 切换 me@example.com 登录系统，进入资料库，查看共享文件的版本变更信息
+   ![Seafile登录页面](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-viewfileinfo1-websoft9.png)
+   ![Seafile登录页面](https://libs.websoft9.com/Websoft9/blog/temp/seafile/seafile-viewfileinfo-websoft9.png)
+
+
 
 ## 常见问题
 
