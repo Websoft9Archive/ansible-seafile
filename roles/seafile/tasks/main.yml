@@ -1,52 +1,74 @@
-#1 install Seafile by OS_family
-- name: Install this role on {{ansible_os_family}}
-  include: "{{ansible_os_family}}.yml"
+- name: Delete seafile dir for sec_installation
+  shell: rm -rf /data/wwwroot seafile
 
-- name: Get Docker Gateway
-  shell: ip route show | grep docker0 | awk '{print $9}'
-  register: docker_gateway
-
-- name: Create /data/wwwroot/seafile
-  file:
-    path: /data/wwwroot/seafile
+- name: Create dir for seafile
+  file: 
     state: directory
-    recurse: yes
+    path: "{{item}}"
+  loop: 
+    - /data/wwwroot/seafile
+    - /data/db/mariadb
+    - /data/
+    
+- name: Clone seafile in Websoft9 
+  git:
+    repo: "{ seafile_git_url}}"
+    dest: "/data/wwwroot seafile"
 
-#2 Run Docker compose
-- name: copy docker-compose.yml
-  template:
-    src: docker-compose.yml
-    dest: /data/wwwroot/seafile/docker-compose.yml
-  
-- name: run docker-compose
-  shell: |
-    docker-compose up -d 
-    sleep 30s
+- name: Run docker-compose 
+  shell: | 
+    docker-compose -f docker-compose-production.yml up -d
+    sleep 30
   args:
     chdir: /data/wwwroot/seafile
 
-- name: Copy OnlyOffice Document Server connection template
-  copy: 
-    src: connect-onlyoffice.conf
-    dest: /data/wwwroot/seafile/connect-onlyoffice.conf
-
-- name: Create ssl directory for user's CA
-  file:
-    path: /data/wwwroot/seafile/seafile-data/ssl
-    state: directory
-  
-#3 UX Settings 
-- name: Create soft link
+- name: Set soft link for seafile
   file:
     src: '{{item.src}}'
     dest: '{{item.dest}}'
     state: link
+    force: yes
   with_items:
-    - {src: /data/wwwroot/seafile/seafile-data,dest: /opt/seafile-data}
-    - {src: /data/wwwroot/seafile/docker-compose.yml,dest: /data/config/seafile_compose.yml}
+  - {src: /data/wwwroot seafile-server/db/,dest: /data/db/mariadb/db}
+  - {src: /data/wwwroot seafile-server/cache/,dest: /data/db/mariadb/db/cache}
+
+# check service and version
+- name: Check seafile service 
+  shell: echo  seafile" `docker inspect seafile |grep -i status`
+  register: check seafile_service
+  notify: check seafile_service
     
-# check service state
-- name: Check Seafile Service
-  shell: docker ps
-  register: check_seafile_service
-  notify: check_seafile_service
+- name: Check seafile version
+  shell: >
+    sudo echo  seafile version:" $(docker images |grep seafilelabs |awk '{print $2}' |head -1 |cut -d- -f1) |sudo tee -a /data/logs/install_version.txt  
+
+- name: Check mariadb version
+  shell: >
+    sudo echo "mariadb version:" $(docker images |grep mariadb |awk '{print $2}') |sudo tee -a /data/logs/install_version.txt  
+
+
+# - name: Copy OnlyOffice Document Server connection template
+#   copy: 
+#     src: connect-onlyoffice.conf
+#     dest: /data/wwwroot/seafile/connect-onlyoffice.conf
+
+# - name: Create ssl directory for user's CA
+#   file:
+#     path: /data/wwwroot/seafile/seafile-data/ssl
+#     state: directory
+  
+# #3 UX Settings 
+# - name: Create soft link
+#   file:
+#     src: '{{item.src}}'
+#     dest: '{{item.dest}}'
+#     state: link
+#   with_items:
+#     - {src: /data/wwwroot/seafile/seafile-data,dest: /opt/seafile-data}
+#     - {src: /data/wwwroot/seafile/docker-compose.yml,dest: /data/config/seafile_compose.yml}
+    
+# # check service state
+# - name: Check Seafile Service
+#   shell: docker ps
+#   register: check_seafile_service
+#   notify: check_seafile_service

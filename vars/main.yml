@@ -1,5 +1,8 @@
 region: "0"
-common_os_support: ["CentOS", "Ubuntu", "Amazon"]
+common_install_docker: True
+docker_install: False
+
+mysql_install_server: False
 
 docker_applications: 
   - onlyofficedocumentserver
@@ -9,13 +12,6 @@ nginx_certbot: True
 nginx_reverse_proxy_port: "9100"
 nginx_appname: "seafile"
 nginx_vhost_mode: "reverse"
-
-mysql_remote: True
-mysql_version: "5.7"       
-mysql_root_password: "123456"
-
-mysql_databases:
- - name: seafile_db
 
 init_db: 
   mysql:
