@@ -1,4 +1,1 @@
-seafile_mysql_root_password: "123456"
-seafile_admin_email: me@example.com
-seafile_admin_password: admin123
-seafile_distribution: "community"
+seafile_git_url: "https://github.com/Websoft9/docker-seafile.git"

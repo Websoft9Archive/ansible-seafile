@@ -8,19 +8,30 @@
   loop: 
     - /data/wwwroot/seafile
     - /data/db/mariadb
-    - /data/
+    - /data/db/elasticsearch
     
 - name: Clone seafile in Websoft9 
   git:
-    repo: "{ seafile_git_url}}"
-    dest: "/data/wwwroot seafile"
+    repo: "{{seafile_git_url}}"
+    dest: "/data/wwwroot/seafile"
+    version: dev
 
 - name: Run docker-compose 
   shell: | 
-    docker-compose -f docker-compose-production.yml up -d
+    docker-compose -f docker-compose-{{seafile_distribution}}.yml up -d
     sleep 30
   args:
     chdir: /data/wwwroot/seafile
+
+- name: Copy OnlyOffice Document Server connection template
+  copy: 
+    src: connect-onlyoffice.conf
+    dest: /data/wwwroot/seafile/connect-onlyoffice.conf
+
+- name: Create ssl directory for user's CA
+  file:
+    path: /data/wwwroot/seafile/seafile_data/ssl
+    state: directory
 
 - name: Set soft link for seafile
   file:
@@ -29,46 +40,28 @@
     state: link
     force: yes
   with_items:
-  - {src: /data/wwwroot seafile-server/db/,dest: /data/db/mariadb/db}
-  - {src: /data/wwwroot seafile-server/cache/,dest: /data/db/mariadb/db/cache}
+  - {src: /data/wwwroot/seafile/mysql_data/,dest: /data/db/mariadb/data}
+  - {src: /data/wwwroot/seafile/elasticsearch_data/,dest: /data/db/elasticsearch/data ,when: 'seafile_distribution' == "enterprise"}
 
 # check service and version
 - name: Check seafile service 
-  shell: echo  seafile" `docker inspect seafile |grep -i status`
-  register: check seafile_service
-  notify: check seafile_service
+  shell: docker ps |grep -w seafile
+  register: check_seafile_service
+  notify: check_seafile_service
     
 - name: Check seafile version
   shell: >
-    sudo echo  seafile version:" $(docker images |grep seafilelabs |awk '{print $2}' |head -1 |cut -d- -f1) |sudo tee -a /data/logs/install_version.txt  
+    sudo echo seafile version:" $(docker images |grep seafilelabs |awk '{print $2}' |head -1 |cut -d- -f1) |sudo tee -a /data/logs/install_version.txt  
 
 - name: Check mariadb version
   shell: >
     sudo echo "mariadb version:" $(docker images |grep mariadb |awk '{print $2}') |sudo tee -a /data/logs/install_version.txt  
 
+- name: Check elasticsearch version
+  shell: >
+    sudo echo "elasticsearch version:" $(docker images |grep mariadb |awk '{print $2}') |sudo tee -a /data/logs/install_version.txt 
+  when: seafile_distribution == "enterprise"
 
-# - name: Copy OnlyOffice Document Server connection template
-#   copy: 
-#     src: connect-onlyoffice.conf
-#     dest: /data/wwwroot/seafile/connect-onlyoffice.conf
 
-# - name: Create ssl directory for user's CA
-#   file:
-#     path: /data/wwwroot/seafile/seafile-data/ssl
-#     state: directory
-  
-# #3 UX Settings 
-# - name: Create soft link
-#   file:
-#     src: '{{item.src}}'
-#     dest: '{{item.dest}}'
-#     state: link
-#   with_items:
-#     - {src: /data/wwwroot/seafile/seafile-data,dest: /opt/seafile-data}
-#     - {src: /data/wwwroot/seafile/docker-compose.yml,dest: /data/config/seafile_compose.yml}
-    
-# # check service state
-# - name: Check Seafile Service
-#   shell: docker ps
-#   register: check_seafile_service
-#   notify: check_seafile_service
+
+
