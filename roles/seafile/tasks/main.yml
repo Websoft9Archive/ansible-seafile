@@ -57,6 +57,10 @@
   shell: >
     sudo echo "mariadb version:" $(docker images |grep mariadb |awk '{print $2}') |sudo tee -a /data/logs/install_version.txt  
 
+- name: Check memcached version
+  shell: >
+    sudo echo "memcached version:" $(docker images |grep memcached |awk '{print $2}') |sudo tee -a /data/logs/install_version.txt  
+
 - name: Check elasticsearch version
   shell: >
     sudo echo "elasticsearch version:" $(docker images |grep elasticsearch |awk '{print $2}') |sudo tee -a /data/logs/install_version.txt 
