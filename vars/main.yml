@@ -13,10 +13,6 @@ nginx_reverse_proxy_port: "9100"
 nginx_appname: "seafile"
 nginx_vhost_mode: "reverse"
 
-init_db: 
-  mysql:
-    admin: root
-    password: "123456"
     
 init_docker:
   seafile:
@@ -32,12 +28,9 @@ init_docker:
       - sudo sed -i "s/123456/$new_password/g" /data/wwwroot/seafile/docker-compose-{{seafile_distribution}}.yml
       - 'sudo sed -i "s/DB_ROOT_PASSWD=.*/DB_ROOT_PASSWD=$new_password/g" /data/wwwroot/seafile/docker-compose-{{seafile_distribution}}.yml'
       - 'sudo sed -i "s/SEAFILE_ADMIN_PASSWORD=.*/SEAFILE_ADMIN_PASSWORD=$new_password/g" /data/wwwroot/seafile/docker-{{seafile_distribution}}.yml'
-      - sudo mysql -u root -p$new_password -e "drop user 'seafile'@' %.%.%.%'"
-      - sudo mysql -u root -p$new_password -e "DROP DATABASE ccnet_db"
-      - sudo mysql -u root -p$new_password -e "DROP DATABASE seafile_db"
-      - sudo mysql -u root -p$new_password -e "DROP DATABASE seahub_db"
     volumes: 
       - /data/wwwroot/seafile/seafile_data
+      - /data/wwwroot/seafile/mysql_data
     commands: 
       - sudo sleep 30s
       - sudo sh -c "cat /data/wwwroot/seafile/connect-onlyoffice.conf 1>> /data/wwwroot/seafile/seafile_data/seafile/conf/seahub_settings.py"
