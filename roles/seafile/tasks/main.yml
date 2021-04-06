@@ -41,7 +41,7 @@
     force: yes
   with_items:
   - {src: /data/wwwroot/seafile/mysql_data/,dest: /data/db/mariadb/data}
-  - {src: /data/wwwroot/seafile/elasticsearch_data/,dest: /data/db/elasticsearch/data ,when: 'seafile_distribution' == "enterprise"}
+  - {src: /data/wwwroot/seafile/elasticsearch_data/,dest: /data/db/elasticsearch/data ,when: 'seafile_distribution == "enterprise"'}
 
 # check service and version
 - name: Check seafile service 
