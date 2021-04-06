@@ -51,7 +51,7 @@
     
 - name: Check seafile version
   shell: >
-    sudo echo "seafile version:" $(docker images |grep seafilelabs |awk '{print $2}' |head -1 |cut -d- -f1) |sudo tee -a /data/logs/install_version.txt  
+    sudo echo "seafile version:" $(docker inspect seafile |grep -i seafile_version |cut -d= -f2) |sudo tee -a /data/logs/install_version.txt  
 
 - name: Check mariadb version
   shell: >
@@ -59,7 +59,7 @@
 
 - name: Check elasticsearch version
   shell: >
-    sudo echo "elasticsearch version:" $(docker images |grep mariadb |awk '{print $2}') |sudo tee -a /data/logs/install_version.txt 
+    sudo echo "elasticsearch version:" $(docker images |grep elasticsearch |awk '{print $2}') |sudo tee -a /data/logs/install_version.txt 
   when: seafile_distribution == "enterprise"
 
 
