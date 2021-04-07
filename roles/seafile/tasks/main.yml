@@ -14,7 +14,6 @@
   git:
     repo: "{{seafile_git_url}}"
     dest: "/data/wwwroot/seafile"
-    version: dev
 
 - name: Run docker-compose 
   shell: | 
