@@ -32,7 +32,7 @@ init_docker:
       - /data/wwwroot/seafile/mysql_data
     commands: 
       - sudo sleep 30s
-      - sudo cat /data/wwwroot/seafile/connect-onlyoffice.conf | tee -a /data/wwwroot/seafile/seafile_data/seafile/conf/seahub_settings.py
+      # - sudo cat /data/wwwroot/seafile/connect-onlyoffice.conf | tee -a /data/wwwroot/seafile/seafile_data/seafile/conf/seahub_settings.py
       - sudo sed -i "s/seafile.example.com/$(curl ifconfig.me)/g" /data/wwwroot/seafile/seafile_data/seafile/conf/seahub_settings.py
       - sudo sed -i "s/seafile.example.com:8000/$(curl ifconfig.me)/g" /data/wwwroot/seafile/seafile_data/seafile/conf/ccnet.conf
       - sudo docker restart seafile
