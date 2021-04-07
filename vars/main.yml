@@ -26,7 +26,7 @@ init_docker:
     compose_path: "/data/wwwroot/seafile/docker-compose-{{seafile_distribution}}.yml"
     compose_commands:
       - sudo sed -i "s/123456/$new_password/g" /data/wwwroot/seafile/docker-compose-{{seafile_distribution}}.yml
-      - sudo sed -i "s/admin123/$new_password/g" /data/wwwroot/seafile/docker-{{seafile_distribution}}.yml
+      - sudo sed -i "s/admin123/$new_password/g" /data/wwwroot/seafile/docker-compose-{{seafile_distribution}}.yml
     volumes: 
       - /data/wwwroot/seafile/seafile_data
       - /data/wwwroot/seafile/mysql_data
