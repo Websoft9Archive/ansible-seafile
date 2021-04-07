@@ -38,10 +38,11 @@
     src: '{{item.src}}'
     dest: '{{item.dest}}'
     state: link
-    force: yes
+    force: False
   with_items:
   - {src: /data/wwwroot/seafile/mysql_data/,dest: /data/db/mariadb/data}
-  - {src: /data/wwwroot/seafile/mysql_data/logs/,dest: /data/logs/seafile}
+  - {src: /data/wwwroot/seafile/seafile_data/seafile/logs/,dest: /data/logs/seafile}
+  - {src: /data/wwwroot/seafile/seafile_data/seafile/conf/,dest: /data/config/seafile}
   - {src: /data/wwwroot/seafile/elasticsearch_data/,dest: /data/db/elasticsearch/data ,when: 'seafile_distribution == enterprise'}
 
 # check service and version
