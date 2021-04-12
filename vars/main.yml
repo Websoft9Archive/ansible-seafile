@@ -28,11 +28,11 @@ init_docker:
       - sudo sed -i "s/123456/$new_password/g" /data/wwwroot/seafile/docker-compose-{{seafile_distribution}}.yml
       - sudo sed -i "s/admin123/$new_password/g" /data/wwwroot/seafile/docker-compose-{{seafile_distribution}}.yml
     volumes: 
-      - /data/wwwroot/seafile/seafile_data
-      - /data/wwwroot/seafile/mysql_data
+      - /data/wwwroot/seafile/volumes
     commands: 
       - sudo sleep 30s
+      - public_ip=`wget -O - https://download.websoft9.com/ansible/get_ip.sh | bash`
       - sudo cat /data/wwwroot/seafile/connect-onlyoffice.conf | tee -a /data/wwwroot/seafile/seafile_data/seafile/conf/seahub_settings.py
-      - sudo sed -i "s/seafile.example.com/$(curl ifconfig.me)/g" /data/wwwroot/seafile/seafile_data/seafile/conf/seahub_settings.py
-      - sudo sed -i "s/seafile.example.com:8000/$(curl ifconfig.me)/g" /data/wwwroot/seafile/seafile_data/seafile/conf/ccnet.conf
+      - sudo sed -i "s/seafile.example.com/$public_ip/g" /data/wwwroot/seafile/seafile_data/seafile/conf/seahub_settings.py
+      - sudo sed -i "s/seafile.example.com:8000/$public_ip/g" /data/wwwroot/seafile/seafile_data/seafile/conf/ccnet.conf
       - sudo docker restart seafile

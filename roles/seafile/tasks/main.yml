@@ -7,6 +7,7 @@
     path: "{{item}}"
   loop: 
     - /data/wwwroot/seafile
+    - /data/wwwroot/seafile/volumes
     - /data/db/mariadb
     - /data/db/elasticsearch
     
@@ -29,7 +30,7 @@
 
 - name: Create ssl directory for user's CA
   file:
-    path: /data/wwwroot/seafile/seafile_data/ssl
+    path: /data/wwwroot/seafile/volumes/seafile_data/ssl
     state: directory
 
 - name: Set soft link for seafile
@@ -39,10 +40,10 @@
     state: link
     force: yes
   with_items:
-  - {src: /data/wwwroot/seafile/mysql_data/,dest: /data/db/mariadb/data}
-  - {src: /data/wwwroot/seafile/seafile_data/seafile/logs/,dest: /data/logs/seafile}
-  - {src: /data/wwwroot/seafile/seafile_data/seafile/conf/,dest: /data/config/seafile}
-  - {src: /data/wwwroot/seafile/elasticsearch_data/,dest: /data/db/elasticsearch/data}
+  - {src: /data/wwwroot/seafile/volumes/mysql_data/,dest: /data/db/mariadb/data}
+  - {src: /data/wwwroot/seafile/volumes/seafile_data/seafile/logs/,dest: /data/logs/seafile}
+  - {src: /data/wwwroot/seafile/volumes/seafile_data/seafile/conf/,dest: /data/config/seafile}
+  - {src: /data/wwwroot/seafile/volumes/elasticsearch_data/,dest: /data/db/elasticsearch/data}
 
 # check service and version
 - name: Check seafile service 
