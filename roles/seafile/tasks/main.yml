@@ -1,21 +1,20 @@
 - name: Delete seafile dir for sec_installation
   shell: rm -rf /data/wwwroot seafile
-
-- name: Create dir for seafile
-  file: 
-    state: directory
-    path: "{{item}}"
-  loop: 
-    - /data/wwwroot/seafile
-    - /data/wwwroot/seafile/volumes
-    - /data/db/mariadb
-    - /data/db/elasticsearch
     
 - name: Clone seafile in Websoft9 
   git:
     repo: "{{seafile_git_url}}"
     dest: "/data/wwwroot/seafile"
 
+- name: Create dir for seafile
+  file: 
+    state: directory
+    path: "{{item}}"
+  loop: 
+    - /data/wwwroot/seafile/volumes
+    - /data/db/mariadb
+    - /data/db/elasticsearch
+    
 - name: Run docker-compose 
   shell: | 
     docker-compose -f docker-compose-{{seafile_distribution}}.yml up -d
