@@ -8,7 +8,7 @@ docker_applications:
   - phpmyadmin
 
 docker_applications_list: 
-  - onlyofficedocumentserver
+  - onlyofficedocs
 
 nginx_certbot: True
 nginx_reverse_proxy_port: "9100"
