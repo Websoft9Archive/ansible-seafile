@@ -5,8 +5,10 @@ docker_install: False
 mysql_install_server: False
 
 docker_applications: 
-  - onlyofficedocumentserver
   - phpmyadmin
+
+docker_applications_list: 
+  - onlyofficedocumentserver
 
 nginx_certbot: True
 nginx_reverse_proxy_port: "9100"
