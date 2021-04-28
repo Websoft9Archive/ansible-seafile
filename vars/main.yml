@@ -6,8 +6,6 @@ mysql_install_server: False
 
 docker_applications: 
   - phpmyadmin
-
-docker_applications_list: 
   - onlyofficedocs
 
 nginx_certbot: True
