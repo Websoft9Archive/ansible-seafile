@@ -16,7 +16,7 @@
    
 #### 完成文档服务器配置，Seafile 仍然无法编辑和预览文件？
 
-![](https://libs-websoft9-com/Websoft9/DocsPicture/zh/seafile/seafile-canotaccess-websoft9.png)  
+![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/seafile/seafile-canotaccess-websoft9.png)  
 
 问题原因：SERVICE_URL 与实际不符  
 解决方案：需登录控制台的系统设置，修改 SERVICE_URL 为实际值
