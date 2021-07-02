@@ -5,6 +5,7 @@
   git:
     repo: "{{seafile_git_url}}"
     dest: "/data/wwwroot/seafile"
+    version: dev 
 
 - name: Create dir for seafile
   file: 
@@ -15,9 +16,11 @@
     - /data/db/mariadb
     - /data/db/elasticsearch
     
-- name: Run docker-compose 
+- name: Rename compose and env filename and Run docker-compose 
   shell: | 
-    docker-compose -f docker-compose-{{seafile_distribution}}.yml up -d
+    mv docker-compose-production-{{seafile_distribution}}.yml docker-compose.yml
+    mv .env_all .env
+    docker-compose up -d
     sleep 30
   args:
     chdir: /data/wwwroot/seafile

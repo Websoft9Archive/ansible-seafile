@@ -23,10 +23,10 @@ init_docker:
     db_username: root
     db_password: "123456"
     service_after: "docker.service"
-    compose_path: "/data/wwwroot/seafile/docker-compose-{{seafile_distribution}}.yml"
+    compose_path: "/data/wwwroot/seafile/docker-compose.yml"
     compose_commands:
-      - sudo sed -i "s/123456/$new_password/g" /data/wwwroot/seafile/docker-compose-{{seafile_distribution}}.yml
-      - sudo sed -i "s/admin123/$new_password/g" /data/wwwroot/seafile/docker-compose-{{seafile_distribution}}.yml
+      - sudo sed -i "s/123456/$new_password/g" /data/wwwroot/seafile/.env
+      - sudo sed -i "s/admin123/$new_password/g" /data/wwwroot/seafile/.env
     volumes: 
       - /data/wwwroot/seafile/volumes
     commands: 
