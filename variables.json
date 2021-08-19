@@ -14,5 +14,5 @@
     "en": "Docker install ",
     "zh": "Docker 安装"
   },
-  "install_url": "https://cloud.seafile.com/published/seafile-manual-cn/maintain/README.md"
+  "install_url": "https://hub.docker.com/r/seafileltd/seafile-mc/tags?page=1&ordering=last_updated"
 }
