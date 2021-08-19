@@ -54,7 +54,7 @@ wget -N https://ghproxy.com/https://raw.githubusercontent.com/Websoft9/ansible-l
 
 #### 本项目安装的是 Seafile 最新版吗？
 
-本项目通过Docker 安装，请通过[官方URL](https://cloud.seafile.com/published/seafile-manual-cn/maintain/README.md)页面查看版本号。  
+本项目通过Docker 安装，请通过[官方URL](https://hub.docker.com/r/seafileltd/seafile-mc/tags?page=1&ordering=last_updated)页面查看版本号。  
 我们会定期检查[Release版本](https://github.com/Websoft9/ansible-seafile/releases)，更新并测试此项目，以保证用户可以顺利安装所需的Seafile版本。 
  
 #### 命令脚本部署与镜像部署有什么区别？

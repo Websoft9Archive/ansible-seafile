@@ -62,7 +62,7 @@ This program provided by Websoft9 contains a series of software with separate co
 
 #### How to install and view the latest release?
 
-This repository install way is Docker install , you can  view the version from [Official URL](https://cloud.seafile.com/published/seafile-manual-cn/maintain/README.md).  
+This repository install way is Docker install , you can  view the version from [Official URL](https://hub.docker.com/r/seafileltd/seafile-mc/tags?page=1&ordering=last_updated).  
 We will check [Release version](https://github.com/Websoft9/ansible-seafile/releases) regularly. Update and test this project to ensure that users can successfully install the required version of Seafile.
 
 #### Can I run this repository on Ansible Tower? 
