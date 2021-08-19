@@ -1,0 +1,17 @@
+{
+  "name": "seafile",
+  "trademark": "Seafile",
+  "official_url": "https://www.seafile.com/home/",
+  "support_os": "CentOS7.x, Ubuntu20.04, Amazon Linux2",
+  "requirements_cpu": "2",
+  "requirements_memory": "6",
+  "requirements_Bandwidth": "100",
+  "requirements_disk": "20",
+  "requirements_swap": "2",
+  "components": "Seafile on Docker, ONLYOFFICE Document Server on Docker, MySQL, phpMyAdmin on Docker, Docker",
+  "install_way": {
+    "en": "Docker install ",
+    "zh": "Docker 安装"
+  },
+  "install_url": "https://cloud.seafile.com/published/seafile-manual-cn/maintain/README.md"
+}
