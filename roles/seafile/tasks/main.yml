@@ -17,8 +17,7 @@
     
 - name: Rename compose and env filename and Run docker-compose 
   shell: | 
-    mv docker-compose-production-{{seafile_distribution}}.yml docker-compose.yml
-    mv .env_all .env
+    [ -f docker-compose-production-{{seafile_distribution}}.yml ] && mv docker-compose-production-{{seafile_distribution}}.yml docker-compose.yml
     docker-compose up -d
     sleep 30
   args:
